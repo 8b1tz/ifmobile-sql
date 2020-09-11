@@ -1,1 +1,143 @@
 Script de criacao do ifmobile
+
+CREATE DATABASE ifmobile
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    CONNECTION LIMIT = -1;
+
+CREATE TABLE estado
+(
+  uf       char(2)          NOT NULL,
+  nome     varchar(40)      NOT NULL,
+  ddd   int                  NOT NULL,
+  CONSTRAINT PK_uf          PRIMARY KEY (uf),
+  CONSTRAINT AK_estado_ddd UNIQUE (ddd),
+  CONSTRAINT CK_estado_uf   CHECK (LENGTH(uf)=2)
+);
+
+CREATE TABLE cidade 
+(
+  idCidade int             NOT NULL,
+  nome     varchar(50)      NOT NULL,
+  uf       char(2)         NOT NULL,
+  CONSTRAINT PK_cidade      PRIMARY KEY (idCidade),
+  CONSTRAINT CK_cidade_uf   CHECK (LENGTH(uf)=2),
+  CONSTRAINT FK_cidade_uf FOREIGN KEY (uf) REFERENCES estado(uf)
+);
+
+CREATE TABLE cliente
+(
+  idCliente int                NOT NULL,
+  nome      varchar(50)        NOT NULL,
+  endereco  varchar(60)        NOT NULL,
+  bairro  varchar(30)             NOT NULL,
+  idCidade  int                NOT NULL,
+  dataCadastro date             NOT NULL,
+  cancelado char(1)        DEFAULT('N')     NOT NULL, 
+  CONSTRAINT PK_cliente        PRIMARY KEY (idCliente),
+   CONSTRAINT CK_cliente_cancelado  CHECK (LENGTH(cancelado)=1),
+  CONSTRAINT FK_cliente_cidade FOREIGN KEY (idCidade) REFERENCES cidade(idCidade)
+);
+
+CREATE TABLE chip
+(
+  ddd int                       NOT NULL,
+  idNumero     char(11)         NOT NULL,
+  ativo char(1)              DEFAULT('S')      NOT NULL,
+  disponivel char(1)         DEFAULT('S')      NOT NULL,
+  CONSTRAINT PK_chip         PRIMARY KEY (idNumero, ddd), 
+  CONSTRAINT CK_chip_ativo   CHECK (LENGTH(ativo)=1),
+  CONSTRAINT CK_chip_disponivel   CHECK (LENGTH(disponivel)=1),
+  CONSTRAINT FK_chip_estado FOREIGN KEY (ddd) REFERENCES estado(ddd)
+);
+
+CREATE TABLE tarifa
+(
+  idTarifa    int           NOT NULL,
+  descricao     varchar(50)   NOT NULL,
+  valor decimal   DEFAULT(0)  NOT NULL,
+  CONSTRAINT PK_tarifa PRIMARY KEY (idTarifa)
+);
+
+CREATE TABLE plano
+(
+  idPlano int        NOT NULL,
+  descricao     varchar(50)        NOT NULL,
+  fmin1  int      DEFAULT (0)      NOT NULL,
+  fmin2  int      DEFAULT (0)      NOT NULL,
+  addLigacao int                   NOT NULL,
+  roaming int   NOT NULL,
+  valor decimal NOT NULL,
+  CONSTRAINT PK_plano     PRIMARY KEY (idPlano),
+  CONSTRAINT FK_plano_tarifa FOREIGN KEY (addLigacao) REFERENCES tarifa(idTarifa),
+  CONSTRAINT FK_plano_tarifa2 FOREIGN KEY (roaming) REFERENCES tarifa(idTarifa)
+);
+
+CREATE TABLE ligacao
+(
+  data timestamp                    NOT NULL,
+  emissorNumero    char(11)           NOT NULL,
+	emissorDDD    int           NOT NULL,
+  ufEmissor    char(2)           NOT NULL,
+  receptor int                   NOT NULL,
+  ufReceptor char(2)             NOT NULL,
+  duracao time                   NOT NULL,
+  CONSTRAINT FK_ligacao_chip FOREIGN KEY (emissorNumero, emissorDDD) REFERENCES chip(idNumero, ddd),
+  CONSTRAINT FK_ligacao_estado FOREIGN KEY (ufEmissor) REFERENCES estado,
+  CONSTRAINT FK_ligacao_estado2 FOREIGN KEY (ufReceptor) REFERENCES estado,
+  CONSTRAINT CK_ligacao_ufEmissor  CHECK (LENGTH(ufEmissor)=2),
+  CONSTRAINT CK_ligacao_ufReceptor  CHECK (LENGTH(ufReceptor)=2)
+);
+
+CREATE TABLE fatura
+(
+  referencia date                      NOT NULL,
+  numero     char(11)                  NOT NULL,
+  ddd     int                          NOT NULL,
+  valorPlano    numeric                NOT NULL,
+  t_min_1 int                          NOT NULL,
+  t_min_2 int                          NOT NULL,
+  tx_min_exced numeric                 NOT NULL,
+  tx_roaming numeric                   NOT NULL,
+  total numeric                        NOT NULL,
+  pago char(1) DEFAULT ('N')           NOT NULL, 
+  CONSTRAINT PK_fatura      PRIMARY KEY (referencia, numero),
+  CONSTRAINT FK_fatura_chip FOREIGN KEY (numero, ddd) REFERENCES chip(idNumero, ddd),
+  CONSTRAINT CK_fatura_pago  CHECK (LENGTH(pago)=1)
+);
+
+
+CREATE TABLE auditoria
+(
+  idNumero char(11)                    NOT NULL,
+  idCliente   int                      NOT NULL,
+  ddd int                              NOT NULL,
+  dataInicio date                      NOT NULL,
+  dataTermino date                     NOT NULL,
+  CONSTRAINT PK_auditoria      PRIMARY KEY ( idCliente,ddd, idNumero),
+  CONSTRAINT FK_auditoria_chip FOREIGN KEY (idNumero, ddd) REFERENCES chip(idNumero, ddd),
+  CONSTRAINT FK_auditoria_cliente FOREIGN KEY (idCliente) REFERENCES cliente
+);
+
+
+CREATE TABLE cliente_chip
+(
+  idNumero char(11)                    NOT NULL,
+  idCliente   int                      NOT NULL,
+  ddd int                              NOT NULL,
+  CONSTRAINT PK_cliente_chip      PRIMARY KEY ( idCliente, ddd, idNumero),
+  CONSTRAINT FK_cliente_chip_chip FOREIGN KEY (idNumero, ddd) REFERENCES chip(idNumero, ddd),
+  CONSTRAINT FK_cliente_chip_cliente FOREIGN KEY (idCliente) REFERENCES cliente(idCliente)
+);
+
+
+
+
+
+
+
+
+
+
+
