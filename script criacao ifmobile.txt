@@ -40,15 +40,16 @@ CREATE TABLE cliente
   CONSTRAINT FK_cliente_cidade FOREIGN KEY (idCidade) REFERENCES cidade(idCidade)
 );
 
-CREATE TABLE chip
-(
+CREATE TABLE chip(
   ddd int                       NOT NULL,
-  idNumero     char(11)         NOT NULL,
+  idNumero   char(11)        NOT NULL,
   ativo char(1)              DEFAULT('S')      NOT NULL,
   disponivel char(1)         DEFAULT('S')      NOT NULL,
-  CONSTRAINT PK_chip         PRIMARY KEY (idNumero, ddd), 
-  CONSTRAINT CK_chip_ativo   CHECK (LENGTH(ativo)=1),
-  CONSTRAINT CK_chip_disponivel   CHECK (LENGTH(disponivel)=1),
+  CONSTRAINT CK_idNumero CHECK ((idNumero ~ '^985[1-2]{1}[0-9]{5}') AND  (idNumero !~ '^985[1-2]{1}[0-9]{1}[0]{4}')),
+  CONSTRAINT CK_idNumero2 CHECK (LENGTH(idNumero) = 9),
+  CONSTRAINT PK_chip        PRIMARY KEY (idNumero, ddd), 
+  CONSTRAINT CK_chip_ativo  CHECK (ativo = 'S' OR ativo = 'N' ),
+  CONSTRAINT CK_chip_disponivel  CHECK (disponivel = 'S' OR disponivel = 'N' ),
   CONSTRAINT FK_chip_estado FOREIGN KEY (ddd) REFERENCES estado(ddd)
 );
 
