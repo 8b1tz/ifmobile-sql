@@ -1,0 +1,10 @@
+insert into auditoria (idNumero, idCliente, dataInicio, dataTermino) values ('', 51, '5/30/2020', '8/23/2020');
+insert into auditoria (idNumero, idCliente, dataInicio, dataTermino) values ('', 97, '2/27/2020', '9/27/2019');
+insert into auditoria (idNumero, idCliente, dataInicio, dataTermino) values ('', 27, '11/28/2019', '1/3/2020');
+insert into auditoria (idNumero, idCliente, dataInicio, dataTermino) values ('', 12, '12/22/2019', '3/17/2020');
+insert into auditoria (idNumero, idCliente, dataInicio, dataTermino) values ('', 92, '7/11/2020', '11/26/2019');
+insert into auditoria (idNumero, idCliente, dataInicio, dataTermino) values ('', 6, '5/20/2020', '11/16/2019');
+insert into auditoria (idNumero, idCliente, dataInicio, dataTermino) values ('', 34, '4/6/2020', '5/1/2020');
+insert into auditoria (idNumero, idCliente, dataInicio, dataTermino) values ('', 27, '1/16/2020', '12/9/2019');
+insert into auditoria (idNumero, idCliente, dataInicio, dataTermino) values ('', 7, '4/11/2020', '6/30/2020');
+insert into auditoria (idNumero, idCliente, dataInicio, dataTermino) values ('', 94, '5/5/2020', '10/13/2019');
