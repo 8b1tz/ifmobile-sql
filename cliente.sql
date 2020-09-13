@@ -1,0 +1,10 @@
+insert into  cliente (idCliente, nome, endereco, bairro, dataCadastro, cancelado, idCidade) values (1, 'Candis Phillpot', '72044 Jackson Plaza', 'Clemons', '13/1/2006', 'S', 1);
+insert into  cliente (idCliente, nome, endereco, bairro, dataCadastro, cancelado, idCidade) values (2, 'Francesco Kitto', '2 Commercial Hill', 'Browning', '1/10/2004', 'N', 2);
+insert into  cliente (idCliente, nome, endereco, bairro, dataCadastro, cancelado, idCidade) values (3, 'Penny Antusch', '399 Mandrake Court', 'Meadow Vale', '6/12/2005', 'N', 3);
+insert into  cliente (idCliente, nome, endereco, bairro, dataCadastro, cancelado, idCidade) values (4, 'Angelia Wallworth', '513 Warbler Pass', 'Forest', '8/11/2005', 'S', 4);
+insert into  cliente (idCliente, nome, endereco, bairro, dataCadastro, cancelado, idCidade) values (5, 'Florance Woodings', '09 Cottonwood Place', 'Arkansas', '3/7/2006', 'S', 5);
+insert into  cliente (idCliente, nome, endereco, bairro, dataCadastro, cancelado, idCidade) values (6, 'Evvie Beckinsall', '54 Dixon Place', 'Hagan', '4/12/2003', 'N', 6);
+insert into  cliente (idCliente, nome, endereco, bairro, dataCadastro, cancelado, idCidade) values (7, 'Cari Iacovini', '95654 Rutledge Trail', 'Cody', '5/2/2007', 'N', 7);
+insert into  cliente (idCliente, nome, endereco, bairro, dataCadastro, cancelado, idCidade) values (8, 'Sileas Ledley', '02 Sutherland Avenue', 'Brentwood', '9/10/2018', 'S', 8);
+insert into  cliente (idCliente, nome, endereco, bairro, dataCadastro, cancelado, idCidade) values (9, 'Meggi Van Der Weedenburg', '44 Londonderry Street', 'Kipling', '12/5/2005', 'S', 9);
+insert into  cliente (idCliente, nome, endereco, bairro, dataCadastro, cancelado, idCidade) values (10, 'Jolyn Helm', '2 Pine View Road', 'Forest Run', '4/12/2011', 'S', 10);

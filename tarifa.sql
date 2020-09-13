@@ -1,0 +1,10 @@
+insert into  tarifa (idTarifa, descricao, valor) values (1, 1, 65);
+insert into  tarifa (idTarifa, descricao, valor) values (2, 2, 184);
+insert into  tarifa (idTarifa, descricao, valor) values (3, 3, 220);
+insert into  tarifa (idTarifa, descricao, valor) values (4, 4, 315);
+insert into  tarifa (idTarifa, descricao, valor) values (5, 5, 107);
+insert into  tarifa (idTarifa, descricao, valor) values (6, 6, 421);
+insert into  tarifa (idTarifa, descricao, valor) values (7, 7, 343);
+insert into  tarifa (idTarifa, descricao, valor) values (8, 8, 420);
+insert into  tarifa (idTarifa, descricao, valor) values (9, 9, 187);
+insert into  tarifa (idTarifa, descricao, valor) values (10, 10, 150);

@@ -1,0 +1,10 @@
+insert into plano (idPlano, descricao, fmin1, fmin2, addLigacao, roaming, valor) values (1, 1, 494, 495, 1, 40, 327);
+insert into plano (idPlano, descricao, fmin1, fmin2, addLigacao, roaming, valor) values (2, 2, 216, 175, 0, 25, 295);
+insert into plano (idPlano, descricao, fmin1, fmin2, addLigacao, roaming, valor) values (3, 3, 240, 326, 1, 14, 173);
+insert into plano (idPlano, descricao, fmin1, fmin2, addLigacao, roaming, valor) values (4, 4, 364, 423, 2, 45, 209);
+insert into plano (idPlano, descricao, fmin1, fmin2, addLigacao, roaming, valor) values (5, 5, 152, 425, 2, 44, 424);
+insert into plano (idPlano, descricao, fmin1, fmin2, addLigacao, roaming, valor) values (6, 6, 329, 135, 2, 20, 154);
+insert into plano (idPlano, descricao, fmin1, fmin2, addLigacao, roaming, valor) values (7, 7, 40, 217, 0, 36, 239);
+insert into plano (idPlano, descricao, fmin1, fmin2, addLigacao, roaming, valor) values (8, 8, 148, 237, 1, 22, 358);
+insert into plano (idPlano, descricao, fmin1, fmin2, addLigacao, roaming, valor) values (9, 9, 324, 413, 0, 5, 257);
+insert into plano (idPlano, descricao, fmin1, fmin2, addLigacao, roaming, valor) values (10, 10, 149, 306, 2, 37, 192);
