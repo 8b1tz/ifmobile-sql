@@ -1,0 +1,10 @@
+insert into fatura (referencia, numero, valorPlano, t_min_1, t_min_2, tx_min_exced, tx_roaming, total, pago) values ('7/30/2020', '', 100, 16, 83, 86, 63, 63, '');
+insert into fatura (referencia, numero, valorPlano, t_min_1, t_min_2, tx_min_exced, tx_roaming, total, pago) values ('3/20/2020', '', 96, 62, 86, 60, 51, 7, '');
+insert into fatura (referencia, numero, valorPlano, t_min_1, t_min_2, tx_min_exced, tx_roaming, total, pago) values ('6/18/2020', '', 27, 36, 37, 43, 70, 78, '');
+insert into fatura (referencia, numero, valorPlano, t_min_1, t_min_2, tx_min_exced, tx_roaming, total, pago) values ('12/31/2019', '', 95, 6, 51, 74, 100, 57, '');
+insert into fatura (referencia, numero, valorPlano, t_min_1, t_min_2, tx_min_exced, tx_roaming, total, pago) values ('3/25/2020', '', 49, 2, 18, 100, 44, 92, '');
+insert into fatura (referencia, numero, valorPlano, t_min_1, t_min_2, tx_min_exced, tx_roaming, total, pago) values ('9/22/2019', '', 74, 25, 8, 58, 71, 67, '');
+insert into fatura (referencia, numero, valorPlano, t_min_1, t_min_2, tx_min_exced, tx_roaming, total, pago) values ('12/28/2019', '', 35, 78, 94, 55, 60, 99, '');
+insert into fatura (referencia, numero, valorPlano, t_min_1, t_min_2, tx_min_exced, tx_roaming, total, pago) values ('1/13/2020', '', 12, 53, 78, 93, 70, 17, '');
+insert into fatura (referencia, numero, valorPlano, t_min_1, t_min_2, tx_min_exced, tx_roaming, total, pago) values ('3/9/2020', '', 14, 7, 62, 71, 73, 3, '');
+insert into fatura (referencia, numero, valorPlano, t_min_1, t_min_2, tx_min_exced, tx_roaming, total, pago) values ('3/22/2020', '', 35, 18, 10, 26, 89, 15, '');
