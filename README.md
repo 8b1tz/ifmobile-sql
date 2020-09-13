@@ -4,9 +4,9 @@
 
 1) Povoamento (1/4)
     - Criar o Banco --- DONE
-    - Criar Tabelas (0/11) --- TODO
-        - estado       X
-        - cidade       X
+    - Criar Tabelas (2/11) --- TODO
+        - estado       V
+        - cidade       V
         - cliente      X
         - chip         X
         - cliente_chip X
