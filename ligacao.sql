@@ -1,0 +1,10 @@
+insert into ligacao (data, emissor, ufEmissor, receptor, ufReceptor, duracao) values ('9/12/2020', '', '', 44, '', '7:56:12');
+insert into ligacao (data, emissor, ufEmissor, receptor, ufReceptor, duracao) values ('4/2/2020', '', '', 37, '', '6:08:50');
+insert into ligacao (data, emissor, ufEmissor, receptor, ufReceptor, duracao) values ('6/9/2020', '', '', 75, '', '3:37:03');
+insert into ligacao (data, emissor, ufEmissor, receptor, ufReceptor, duracao) values ('4/19/2020', '', '', 27, '', '0:27:27');
+insert into ligacao (data, emissor, ufEmissor, receptor, ufReceptor, duracao) values ('11/14/2019', '', '', 93, '', '10:33:37');
+insert into ligacao (data, emissor, ufEmissor, receptor, ufReceptor, duracao) values ('9/20/2019', '', '', 6, '', '11:39:35');
+insert into ligacao (data, emissor, ufEmissor, receptor, ufReceptor, duracao) values ('11/22/2019', '', '', 60, '', '9:41:43');
+insert into ligacao (data, emissor, ufEmissor, receptor, ufReceptor, duracao) values ('12/11/2019', '', '', 18, '', '5:46:37');
+insert into ligacao (data, emissor, ufEmissor, receptor, ufReceptor, duracao) values ('10/24/2019', '', '', 28, '', '1:18:10');
+insert into ligacao (data, emissor, ufEmissor, receptor, ufReceptor, duracao) values ('6/2/2020', '', '', 36, '', '7:12:37');
