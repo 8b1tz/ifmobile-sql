@@ -1,15 +1,15 @@
 # Projeto Banco de Dados II ( IFmobile)
 
-<h2> Até dia 16/09, faltam 1 dia </h2>
+<h2> Até dia 16/09, falta 1 dia </h2>
 
 1) Povoamento (1/4)
     - Criar o Banco --- DONE
     - Criar Tabelas (2/11) --- TODO
         - estado       V
         - cidade       V
-        - cliente      X
-        - chip         X
-        - cliente_chip X
+        - cliente      v
+        - chip         v
+        - cliente_chip v
         
         - cobertura    V
         - tarifa       V
