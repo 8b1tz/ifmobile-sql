@@ -1,10 +1,10 @@
-insert into plano (idPlano, descricao, fminIn, fminout, addLigacao, roaming, valor) values (1, 'cliente com desconto (30%),', 568, 328, 5, 8, 110);
-insert into plano (idPlano, descricao, fminIn, fminout, addLigacao, roaming, valor) values (2, 'cliente comum', 841, 223, 5, 8, 194);
+insert into plano (idPlano, descricao, fminIn, fminout, addLigacao, roaming, valor) values (1, 'cliente com desconto (30%),', 568, 38, 5, 8, 110);
+insert into plano (idPlano, descricao, fminIn, fminout, addLigacao, roaming, valor) values (2, 'cliente comum', 41, 23, 5, 8, 194);
 insert into plano (idPlano, descricao, fminIn, fminout, addLigacao, roaming, valor) values (3, 'cliente com desconto (20%)', 856, 314, 5, 2, 175);
-insert into plano (idPlano, descricao, fminIn, fminout, addLigacao, roaming, valor) values (4, 'cliente comum', 986, 385, 3, 2, 200);
-insert into plano (idPlano, descricao, fminIn, fminout, addLigacao, roaming, valor) values (5, 'cliente com desconto (25%)', 793, 360, 4, 7, 148);
-insert into plano (idPlano, descricao, fminIn, fminout, addLigacao, roaming, valor) values (6, 'cliente comum', 546, 385, 3, 7, 177);
+insert into plano (idPlano, descricao, fminIn, fminout, addLigacao, roaming, valor) values (4, 'cliente comum', 986, 85, 3, 2, 200);
+insert into plano (idPlano, descricao, fminIn, fminout, addLigacao, roaming, valor) values (5, 'cliente com desconto (25%)', 593, 360, 4, 7, 148);
+insert into plano (idPlano, descricao, fminIn, fminout, addLigacao, roaming, valor) values (6, 'cliente comum', 546, 35, 3, 7, 177);
 insert into plano (idPlano, descricao, fminIn, fminout, addLigacao, roaming, valor) values (7, 'cliente com desconto (35%)', 723, 405, 1, 4, 106);
-insert into plano (idPlano, descricao, fminIn, fminout, addLigacao, roaming, valor) values (8, 'cliente comum', 530, 375, 5, 6, 219);
-insert into plano (idPlano, descricao, fminIn, fminout, addLigacao, roaming, valor) values (9, 'cliente com desconto (15%)', 887, 427, 4, 5, 124);
-insert into plano (idPlano, descricao, fminIn, fminout, addLigacao, roaming, valor) values (10, 'cliente comum', 860, 382, 2, 2, 269);
+insert into plano (idPlano, descricao, fminIn, fminout, addLigacao, roaming, valor) values (8, 'cliente comum', 530, 75, 5, 6, 219);
+insert into plano (idPlano, descricao, fminIn, fminout, addLigacao, roaming, valor) values (9, 'cliente com desconto (15%)', 587, 427, 4, 5, 124);
+insert into plano (idPlano, descricao, fminIn, fminout, addLigacao, roaming, valor) values (10, 'cliente comum', 86, 32, 2, 2, 269);
