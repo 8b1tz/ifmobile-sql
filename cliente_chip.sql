@@ -1,10 +1,11 @@
-insert into chip (idNumero, idCliente) values ('', 61);
-insert into chip (idNumero, idCliente) values ('', 77);
-insert into chip (idNumero, idCliente) values ('', 88);
-insert into chip (idNumero, idCliente) values ('', 73);
-insert into chip (idNumero, idCliente) values ('', 45);
-insert into chip (idNumero, idCliente) values ('', 55);
-insert into chip (idNumero, idCliente) values ('', 62);
-insert into chip (idNumero, idCliente) values ('', 45);
-insert into chip (idNumero, idCliente) values ('', 49);
-insert into chip (idNumero, idCliente) values ('', 75);
+
+insert into cliente_chip (idNumero, idCliente) values ('', 94);
+insert into cliente_chip (idNumero, idCliente) values ('', 53);
+insert into cliente_chip (idNumero, idCliente) values ('', 87);
+insert into cliente_chip (idNumero, idCliente) values ('', 52);
+insert into cliente_chip (idNumero, idCliente) values ('', 21);
+insert into cliente_chip (idNumero, idCliente) values ('', 77);
+insert into cliente_chip (idNumero, idCliente) values ('', 25);
+insert into cliente_chip (idNumero, idCliente) values ('', 44);
+insert into cliente_chip (idNumero, idCliente) values ('', 11);
+insert into cliente_chip (idNumero, idCliente) values ('', 76);
