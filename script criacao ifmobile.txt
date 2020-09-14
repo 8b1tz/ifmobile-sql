@@ -95,6 +95,7 @@ CREATE TABLE ligacao
   receptor int                   NOT NULL,
   ufReceptor char(2)             NOT NULL,
   duracao time                   NOT NULL,
+  CONSTRAINT PK_ligacao PRIMARY KEY (data),
   CONSTRAINT FK_ligacao_chip FOREIGN KEY (emissorNumero, emissorDDD) REFERENCES chip(idNumero, ddd),
   CONSTRAINT FK_ligacao_estado FOREIGN KEY (ufEmissor) REFERENCES estado,
   CONSTRAINT FK_ligacao_estado2 FOREIGN KEY (ufReceptor) REFERENCES estado,
