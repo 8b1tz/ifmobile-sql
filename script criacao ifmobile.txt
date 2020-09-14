@@ -52,7 +52,7 @@ CREATE TABLE chip(
   CONSTRAINT CK_chip_ativo  CHECK (ativo = 'S' OR ativo = 'N' ),
   CONSTRAINT CK_chip_disponivel  CHECK (disponivel = 'S' OR disponivel = 'N' ),
   CONSTRAINT FK_chip_estado FOREIGN KEY (ddd) REFERENCES estado(ddd),
-  CONSTRAINT FK_idPlano_plano FOREING KEY (idPlano) REFERENCES plano(idPlano),
+  CONSTRAINT FK_idPlano_plano FOREIGN KEY (idPlano) REFERENCES plano(idPlano),
 );
 
 CREATE TABLE tarifa
