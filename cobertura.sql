@@ -1,0 +1,10 @@
+insert into cobertura (uf, ddd) values ('', 53);
+insert into cobertura (uf, ddd) values ('', 80);
+insert into cobertura (uf, ddd) values ('', 7);
+insert into cobertura (uf, ddd) values ('', 16);
+insert into cobertura (uf, ddd) values ('', 81);
+insert into cobertura (uf, ddd) values ('', 65);
+insert into cobertura (uf, ddd) values ('', 29);
+insert into cobertura (uf, ddd) values ('', 77);
+insert into cobertura (uf, ddd) values ('', 57);
+insert into cobertura (uf, ddd) values ('', 23);
