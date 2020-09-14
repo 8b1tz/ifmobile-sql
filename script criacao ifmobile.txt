@@ -43,6 +43,7 @@ CREATE TABLE cliente
 CREATE TABLE chip(
   ddd int                       NOT NULL,
   idNumero   char(11)        NOT NULL,
+  idPlano   int              NOT NULL,
   ativo char(1)              DEFAULT('S')      NOT NULL,
   disponivel char(1)         DEFAULT('S')      NOT NULL,
   CONSTRAINT CK_idNumero CHECK ((idNumero ~ '^985[1-2]{1}[0-9]{5}') AND  (idNumero !~ '^985[1-2]{1}[0-9]{1}[0]{4}')),
@@ -50,7 +51,8 @@ CREATE TABLE chip(
   CONSTRAINT PK_chip        PRIMARY KEY (idNumero, ddd), 
   CONSTRAINT CK_chip_ativo  CHECK (ativo = 'S' OR ativo = 'N' ),
   CONSTRAINT CK_chip_disponivel  CHECK (disponivel = 'S' OR disponivel = 'N' ),
-  CONSTRAINT FK_chip_estado FOREIGN KEY (ddd) REFERENCES estado(ddd)
+  CONSTRAINT FK_chip_estado FOREIGN KEY (ddd) REFERENCES estado(ddd),
+  CONSTRAINT FK_idPlano_plano FOREING KEY (idPlano) REFERENCES plano(idPlano),
 );
 
 CREATE TABLE tarifa
