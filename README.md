@@ -7,9 +7,9 @@
     - Criar Tabelas (2/11) --- TODO
         - estado       V
         - cidade       V
-        - cliente      V
-        - chip         V
-        - cliente_chip V
+        - cliente      X
+        - chip         X
+        - cliente_chip X
         
         - cobertura    V
         - tarifa       V
@@ -17,7 +17,7 @@
         - fatura       V
         - ligacao      V
         - plano        V
-    - Confirmar se as tabelas atendem ao dicionário --- TODO
+    - Confirmar se as tabelas atendem ao dicionário --- DONE
     - Usar script de povoamento (feita pelo professor) --- TODO
 
 2) Instruções SQL (0/2)
