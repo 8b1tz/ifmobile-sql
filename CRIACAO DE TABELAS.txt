@@ -119,7 +119,7 @@ CREATE TABLE fatura
   pago char(1) DEFAULT ('N')           NOT NULL, 
   CONSTRAINT PK_fatura      PRIMARY KEY (referencia, idNumero),
   CONSTRAINT FK_fatura_chip FOREIGN KEY (idNumero) REFERENCES chip(idNumero),
-  CONSTRAINT CK_fatura_pago  CHECK (pago = 'S' OR pago = 'N'),
+  CONSTRAINT CK_fatura_pago  CHECK (pago = 'S' OR pago = 'N')
 );
 
 
