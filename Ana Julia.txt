@@ -6,6 +6,8 @@ CREATE DATABASE ifmobile
     ENCODING = 'UTF8'
     CONNECTION LIMIT = -1;
 
+
+
 CREATE TABLE estado
 (
   uf       char(2)          NOT NULL,
@@ -95,6 +97,7 @@ CREATE TABLE ligacao
   chip_receptor int                   NOT NULL,
   ufDestino char(2)             NOT NULL,
   duracao time                   NOT NULL,
+  CONSTRAINT PK_ligacao      PRIMARY KEY (data), 
   CONSTRAINT FK_ligacao_chip FOREIGN KEY (chip_emissor) REFERENCES chip(idNumero),
   CONSTRAINT FK_ligacao_estado FOREIGN KEY (ufOrigem) REFERENCES estado,
   CONSTRAINT FK_ligacao_estado2 FOREIGN KEY (ufDestino) REFERENCES estado,
@@ -125,6 +128,7 @@ CREATE TABLE auditoria
   idCliente   int                      NOT NULL,
   dataInicio date                      NOT NULL,
   dataTermino date                     NOT NULL,
+  CONSTRAINT PK_auditoria      PRIMARY KEY (idNumero, idCliente, dataInicio),
   CONSTRAINT FK_auditoria_chip FOREIGN KEY (idNumero) REFERENCES chip(idNumero),
   CONSTRAINT FK_auditoria_cliente FOREIGN KEY (idCliente) REFERENCES cliente
 );
@@ -141,45 +145,6 @@ CREATE TABLE cliente_chip
 
 
 
-
-
-----------------------------------------------------------------------------------------------------
-
-Povoamento
-
-Tabela estado
-
-INSERT INTO estado (uf, nome, ddd) VALUES ('AC', 'Acre', 68);
-INSERT INTO estado (uf, nome, ddd) VALUES ('AL', 'Alagoas', 82);
-INSERT INTO estado (uf, nome, ddd) VALUES ('AM', 'Amazonas', 92);
-INSERT INTO estado (uf, nome, ddd) VALUES ('AP', 'Amapá', 96);
-INSERT INTO estado (uf, nome, ddd) VALUES ('BA', 'Bahia', 71);
-INSERT INTO estado (uf, nome, ddd) VALUES ('CE', 'Ceará', 85 );
-INSERT INTO estado (uf, nome, ddd) VALUES ('DF', 'Distrito Federal', 61 );
-INSERT INTO estado (uf, nome, ddd) VALUES ('ES', 'Espírito Santo', 27 );
-INSERT INTO estado (uf, nome, ddd) VALUES ('GO', 'Goiás', 62 );
-INSERT INTO estado (uf, nome, ddd) VALUES ('MA', 'Maranhão', 98);
-INSERT INTO estado (uf, nome, ddd) VALUES ('MG', 'Minas Gerais', 31 );
-INSERT INTO estado (uf, nome, ddd) VALUES ('MS', 'Mato Grosso do Sul', 67);
-INSERT INTO estado (uf, nome, ddd) VALUES ('MT', 'Mato Grosso',65 );
-INSERT INTO estado (uf, nome, ddd) VALUES ('PA', 'Pará', 91);
-INSERT INTO estado (uf, nome, ddd) VALUES ('PB', 'Paraíba', 83 );
-INSERT INTO estado (uf, nome, ddd) VALUES ('PE', 'Pernambuco', 81);
-INSERT INTO estado (uf, nome, ddd) VALUES ('PI', 'Piauí', 86);
-INSERT INTO estado (uf, nome, ddd) VALUES ('PR', 'Paraná', 41);
-INSERT INTO estado (uf, nome, ddd) VALUES ('RJ', 'Rio de Janeiro', 21);
-INSERT INTO estado (uf, nome, ddd) VALUES ('RN', 'Rio Grande do Norte', 84);
-INSERT INTO estado (uf, nome, ddd) VALUES ('RO', 'Rondônia', 69);
-INSERT INTO estado (uf, nome, ddd) VALUES ('RR', 'Roraima', 95);
-INSERT INTO estado (uf, nome, ddd) VALUES ('RS', 'Rio Grande do Sul', 51 );
-INSERT INTO estado (uf, nome, ddd) VALUES ('SC', 'Santa Catarina', 47);
-INSERT INTO estado (uf, nome, ddd) VALUES ('SE', 'Sergipe', 79);
-INSERT INTO estado (uf, nome, ddd) VALUES ('SP', 'São Paulo', 11);
-INSERT INTO estado (uf, nome, ddd) VALUES ('TO', 'Tocantins', 63);
-
-Tabela cidade
-
-Igual ao do professor
 
 
 
