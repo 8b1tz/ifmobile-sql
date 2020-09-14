@@ -1,6 +1,6 @@
 # Projeto Banco de Dados II ( IFmobile)
 
-<h2> Até dia 16/09, faltam 3 dias </h2>
+<h2> Até dia 16/09, faltam 1 dia </h2>
 
 1) Povoamento (1/4)
     - Criar o Banco --- DONE
