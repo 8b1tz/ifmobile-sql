@@ -16,6 +16,15 @@ CREATE TABLE estado
   CONSTRAINT CK_estado_uf   CHECK (LENGTH(uf)=2)
 );
 
+CREATE TABLE cobertura
+(
+ uf     char(2)     NOT NULL,
+ ddd    int         NOT NULL,
+ CONSTRAINT PK_uf   PRIMARY KEY (uf),
+ CONSTRAINT AK_cobertura_ddd UNIQUE (ddd),
+ CONSTRAINT FK_cobertura_uf FOREIGN KEY (uf) REFERENCES estado(uf),
+);
+
 CREATE TABLE cidade 
 (
   idCidade SERIAL             NOT NULL,
