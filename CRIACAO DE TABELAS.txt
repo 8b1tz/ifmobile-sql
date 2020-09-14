@@ -40,7 +40,7 @@ CREATE TABLE cliente
   CONSTRAINT PK_cliente        PRIMARY KEY (idCliente),
    CONSTRAINT CK_cliente_cancelado  CHECK (LENGTH(cancelado)=1),
   CONSTRAINT FK_cliente_cidade FOREIGN KEY (idCidade) REFERENCES cidade(idCidade),
-	CONSTRAINT CK_cliente_cancelado  CHECK (cancelado = 'S' OR cancelado = 'N' ),
+  CONSTRAINT CK_cliente_cancelado  CHECK (cancelado = 'S' OR cancelado = 'N' ),
 );
 
 
