@@ -1,10 +1,6 @@
-insert into cobertura (uf, ddd) values ('VA', 30);
-insert into cobertura (uf, ddd) values ('CO', 22);
-insert into cobertura (uf, ddd) values ('MN', 34);
-insert into cobertura (uf, ddd) values ('NC', 51);
-insert into cobertura (uf, ddd) values ('MA', 18);
-insert into cobertura (uf, ddd) values ('WA', 87);
-insert into cobertura (uf, ddd) values ('DE', 26);
-insert into cobertura (uf, ddd) values ('FL', 43);
-insert into cobertura (uf, ddd) values ('FL', 77);
-insert into cobertura (uf, ddd) values ('IL', 6);
+INSERT INTO cobertura (uf, ddd) VALUES ('PB', 83);
+INSERT INTO cobertura (uf, ddd) VALUES ('PE', 81);
+INSERT INTO cobertura (uf, ddd) VALUES ('RN', 84);
+INSERT INTO cobertura (uf, ddd) VALUES ('SP', 11);
+INSERT INTO cobertura (uf, ddd) VALUES ('RJ', 21);
+INSERT INTO cobertura (uf, ddd) VALUES ('MG', 31);
