@@ -2,6 +2,9 @@
 /* Alunos: */
 -- Yohanna de Oliveira Cavalcanti - 20191370003 
 -- Ana Júlia Oliveira Lins - 20191370002
+-- Gabriel Xavier Silva - 20191370025
+
+-- Criação do DB (Faça essa parte primeiro)
 
 CREATE DATABASE ifmobile
     WITH 
@@ -10,6 +13,8 @@ CREATE DATABASE ifmobile
     CONNECTION LIMIT = -1;
 
 
+
+-- Criação das Tabelas
 
 CREATE TABLE estado
 (

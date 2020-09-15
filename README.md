@@ -1,5 +1,10 @@
 # Projeto Banco de Dados II ( IFmobile)
 
+/* Alunos: */
+-- Yohanna de Oliveira Cavalcanti - 20191370003 
+-- Ana Júlia Oliveira Lins - 20191370002
+-- Gabriel Xavier Silva - 20191370025
+
 <h2> Até dia 16/09</h2>
 
 1) Povoamento (4/4)
