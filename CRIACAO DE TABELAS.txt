@@ -95,7 +95,7 @@ CREATE TABLE ligacao
   data timestamp                    NOT NULL,
   chip_emissor    char(11)           NOT NULL,
   ufOrigem    char(2)           NOT NULL,
-  chip_receptor int                   NOT NULL,
+  chip_receptor char(11)                   NOT NULL,
   ufDestino char(2)             NOT NULL,
   duracao time                   NOT NULL,
   CONSTRAINT PK_ligacao      PRIMARY KEY (data), 
