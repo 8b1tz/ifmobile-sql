@@ -1,6 +1,7 @@
 /* Script de criacao do ifmobile */
 /* Alunos: */
 -- Yohanna de Oliveira Cavalcanti - 20191370003 
+-- Ana Júlia Oliveira Lins - 20191370002
 
 CREATE DATABASE ifmobile
     WITH 
