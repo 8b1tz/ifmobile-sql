@@ -1,5 +1,6 @@
 /* Alunos: */
 -- Yohanna de Oliveira Cavalcanti - 20191370003 
+-- Ana Júlia Oliveira Lins - 20191370002
 
 -- Ponto 2.1)
 /* Uma query para retornar todas as ligações efetuadas por um número específico 
