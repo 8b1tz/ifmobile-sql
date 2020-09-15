@@ -120,6 +120,10 @@ insert into ligacao (data, chip_emissor, ufOrigem, chip_receptor, ufDestino, dur
 insert into ligacao (data, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2007-03-30 03:42:31', '95985212345', 'RR', 21985112346, 'RJ', '3:07:46');
 insert into ligacao (data, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2015-10-11 00:53:28', '21985112346', 'RJ', 83985112345, 'PB', '5:01:15');
 
+insert into ligacao (data, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2007-03-29 10:42:31', '95985212345', 'RR', 21985112346, 'RJ', '0:07:00');
+insert into ligacao (data, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2007-03-28 13:42:31', '95985212345', 'RR', 21985112346, 'RJ', '1:03:26');
+insert into ligacao (data, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2007-02-28 13:42:31', '95985212345', 'RR', 21985112346, 'RJ', '3:03:26');
+
 -- TABELA: fatura
 
   
