@@ -1,3 +1,6 @@
+/* Alunos: */
+-- Yohanna de Oliveira Cavalcanti - 20191370003 
+
 -- Ponto 2.1)
 /* Uma query para retornar todas as ligações efetuadas por um número específico 
 (exemplo: 83 98880-0505) que está em auditoria (se não estiver em auditoria, não será exibido resultado).
