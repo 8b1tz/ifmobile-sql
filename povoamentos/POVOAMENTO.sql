@@ -44,6 +44,7 @@ INSERT INTO cobertura (uf, ddd) VALUES ('RJ', 21);
 INSERT INTO cobertura (uf, ddd) VALUES ('MG', 31);
 
 
+-- Codigo da tabela cidade é uma Contribuição do professor Alex Sandro.
 
 -- TABELA: cidade
 
