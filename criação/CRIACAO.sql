@@ -4,7 +4,7 @@
 -- Ana Júlia Oliveira Lins - 20191370002
 -- Gabriel Xavier Silva - 20191370025
 
--- Criação do DB (Faça essa parte primeiro)
+-- Criação do DB (FAÇA ESSA PARTE PRIMEIRO)
 
 CREATE DATABASE ifmobile
     WITH 
