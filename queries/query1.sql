@@ -1,4 +1,4 @@
-SELECT li.data as data_da_ligacao, li.chip_receptor as número_de_destino, li.duracao as duração
+SELECT li.data as data_da_ligacao, li.chip_receptor as numero_de_destino, li.duracao as duracao
 FROM ligacao li 
 JOIN chip chi
 ON li.chip_emissor = chi.idnumero join
