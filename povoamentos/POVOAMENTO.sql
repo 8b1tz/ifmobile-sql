@@ -1,4 +1,7 @@
 
+/* Alunos: */
+/* Yohanna de Oliveira Cavalcanti - 20191370003 */
+
 -- TABELA: Estados
 
 INSERT INTO estado (uf, nome, ddd) VALUES ('AC', 'Acre', 68);
