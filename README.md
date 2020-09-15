@@ -1,6 +1,7 @@
 # Projeto Banco de Dados II ( IFmobile)
 
-/* Alunos: */ </br>
+<h2>/* Alunos: */ </br></h2>
+
 - Yohanna de Oliveira Cavalcanti - 20191370003 </br>
 - Ana Júlia Oliveira Lins - 20191370002    </br>
 - Gabriel Xavier Silva - 20191370025   </br>
