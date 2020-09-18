@@ -6,33 +6,17 @@
 - Ana Júlia Oliveira Lins - 20191370002    </br>
 - Gabriel Xavier Silva - 20191370025   </br>
 
-<h2> Até dia 16/09  -  Tarefa 1</h2>
+<h2> Até dia 23/09  - <bold>FALTAM 6 DIAS</bold> -  Tarefa 2</h2>
 
-1) Povoamento (4/4)
-    - Criar o Banco --- DONE
-    - Criar Tabelas (11/11) --- DONE
-        - estado       V
-        - cidade       V
-        - cliente      v
-        - chip         v
-        - cliente_chip v
-        
-        - cobertura    V
-        - tarifa       V
-        - auditoria    V
-        - fatura       V
-        - ligacao      V
-        - plano        V
-    - Confirmar se as tabelas atendem ao dicionário --- DONE
-    - Usar script de povoamento (feita pelo professor) --- DONE
+Implementar views e índices conforme requisitos e regras do projeto IFMobile
 
-2) Instruções SQL (2/2)
-    - a) Uma query para retornar todas as ligações efetuadas por um número específico (exemplo: 83 98880-0505) que está em auditoria (se não estiver em auditoria, não será exibido         resultado). As ligações monitoradas são referentes ao período em que a auditoria foi configurada (datas de início e término da auditoria) . Como resultado, você deve               apresentar 3 informações: ------ DONE
 
-        - data da ligação
-        - número de destino
-        - duração da chamada
+a)	Visões:
+    - 01 visão que permita inserção. Justificar sua criação dentro do escopo do projeto. 
+    - 02 visões robustas (por exemplo, com vários joins) com justificativa semântica, de acordo com os requisitos do projeto/aplicação.  
+b)	Índices
+    - 03 índices para campos indicados (além dos referentes às PKs e UNIQUEs) com justificativa. 
+    - Mostrar testes de consultas que demonstrem uso de índice.  
 
-        Obs: Se houver mais de uma auditoria, considere apenas a mais recente.
 
-    - b) Uma query para retornar o somatório da duração (hora/minuto/segundo) das chamadas que um determinado número telefônico realizou com subtotais por dia, mês e ano,                independentemente do tempo em que o cliente está na operadora. ------ DONE
+A tarefa deve ser realizada de modo colaborativo por grupo. Assim cada grupo irá pensar, planejar e implementar as visões e índices pedidos conforme discussão interna dele. 
