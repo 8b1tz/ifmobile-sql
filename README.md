@@ -12,11 +12,12 @@ Implementar views e índices conforme requisitos e regras do projeto IFMobile
 
 
 a)	Visões:
-    - 01 visão que permita inserção. Justificar sua criação dentro do escopo do projeto. 
-    - 02 visões robustas (por exemplo, com vários joins) com justificativa semântica, de acordo com os requisitos do projeto/aplicação.  
-b)	Índices
-    - 03 índices para campos indicados (além dos referentes às PKs e UNIQUEs) com justificativa. 
-    - Mostrar testes de consultas que demonstrem uso de índice.  
+- 01 visão que permita inserção. Justificar sua criação dentro do escopo do projeto. 
+- 02 visões robustas (por exemplo, com vários joins) com justificativa semântica, de acordo com os requisitos do projeto/aplicação.
+
+b)	Índices:
+   - 03 índices para campos indicados (além dos referentes às PKs e UNIQUEs) com justificativa. 
+   - Mostrar testes de consultas que demonstrem uso de índice.  
 
 
 A tarefa deve ser realizada de modo colaborativo por grupo. Assim cada grupo irá pensar, planejar e implementar as visões e índices pedidos conforme discussão interna dele. 
