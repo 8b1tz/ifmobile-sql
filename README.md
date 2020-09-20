@@ -6,7 +6,7 @@
 - Ana Júlia Oliveira Lins - 20191370002    </br>
 - Gabriel Xavier Silva - 20191370025   </br>
 
-<h2> Até dia 23/09  - <bold>FALTAM 6 DIAS</bold> -  Tarefa 2</h2>
+<h2> Até dia 23/09  - <bold>FALTAM 3 DIAS</bold> -  Tarefa 2</h2>
 
 Implementar views e índices conforme requisitos e regras do projeto IFMobile
 
