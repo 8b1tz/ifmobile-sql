@@ -1,0 +1,18 @@
+SCRIPT ATIVIDADE 2
+
+Visões:
+
+a) 0/1 visão que permita inserção. Justificar sua criação dentro do escopo do projeto.
+
+b) 0/2 visões robustas (por exemplo, com vários joins) com justificativa semântica, de acordo com os requisitos do projeto/aplicação.
+
+Índices:
+
+a) 0/3 índices para campos indicados (além dos referentes às PKs e UNIQUEs) com justificativa.
+
+IDEIAS :
+    -> idNumero em cliente_chip
+    -> chip_emissor em ligacao
+    -> idCidade em cidade
+
+b) 0/3 Mostrar testes de consultas que demonstrem uso de índice.
