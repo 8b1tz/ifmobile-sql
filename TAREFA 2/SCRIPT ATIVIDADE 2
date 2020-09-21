@@ -43,4 +43,9 @@ a) 1/3 índices para campos indicados (além dos referentes às PKs e UNIQUEs) c
        ON cliente
        USING hash(idcidade)
 
+    -> uf em cidade
+        CREATE  INDEX idx_cidade_uf
+        ON cidade
+        USING hash(uf)
+
 b) 0/3 Mostrar testes de consultas que demonstrem uso de índice.
