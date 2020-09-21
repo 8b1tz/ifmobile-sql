@@ -1,0 +1,22 @@
+Essas são apenas idéias de onde colocar views e indices.
+
+VIEWS
+a) criar view em cliente para mostrar apenas o nome e se o chip está cancelado
+
+b) escolher 2 dessas :
+	Visão 1: ‘tabela’ que mostre o ranking dos planos mais comercializados, com os seguintes campos
+	idPlano / descricao do plano / quantidade de planos ativos / valor total arrecadado
+
+	Visão 2: ‘tabela’ mostre, por mês/ano, qual o faturamento alcançado. Colunas:
+	ano / mes / numero de clientes / faturamento 
+
+	Visão 3: ‘tabela’ que apresente a relação de clientes composta pelos seguintes campos:
+	idCliente / nome / uf / numero / plano contratado / tempo de fidelidade na empresa (anos e meses)
+
+INDICES
+a) 
+    -> idNumero em cliente_chip
+    -> chip_emissor em ligacao
+    -> idCidade em cidade
+
+b) testar
