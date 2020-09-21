@@ -35,10 +35,12 @@ a) 1/3 índices para campos indicados (além dos referentes às PKs e UNIQUEs) c
 
     -> nome em cidade
         CREATE INDEX idx_cidades_nomes
-        ON cidade(nome)
+        ON cidade
+        USING hash(nome)
         
     -> idcidade em ciente
        CREATE  INDEX idx_cliente_fkidcidade
-       ON cliente(idcidade)
+       ON cliente
+       USING hash(idcidade)
 
 b) 0/3 Mostrar testes de consultas que demonstrem uso de índice.
