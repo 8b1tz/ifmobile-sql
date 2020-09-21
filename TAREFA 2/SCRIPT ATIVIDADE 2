@@ -4,7 +4,17 @@ Visões:
 
 a) 0/1 visão que permita inserção. Justificar sua criação dentro do escopo do projeto.
 
-b) 0/2 visões robustas (por exemplo, com vários joins) com justificativa semântica, de acordo com os requisitos do projeto/aplicação.
+b) 1/2 visões robustas (por exemplo, com vários joins) com justificativa semântica, de acordo com os requisitos do projeto/aplicação.
+
+CREATE OR REPLACE VIEW view_cliente_chip
+AS (SELECT cl.nome, cl.cancelado, chi.idnumero, chi.ativo
+ FROM cliente cl 
+ JOIN cliente_chip ch
+ ON cl.idcliente = ch.idcliente 
+ JOIN chip chi
+ ON chi.idnumero = ch.idnumero)
+ 
+ 
 
 Índices:
 
