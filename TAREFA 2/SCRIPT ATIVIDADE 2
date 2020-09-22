@@ -1,8 +1,8 @@
-SCRIPT ATIVIDADE 2
+--SCRIPT ATIVIDADE 2
 
-Visões:
+--Visões:
 
-a) 1/1 visão que permita inserção. Justificar sua criação dentro do escopo do projeto.
+--a) 1/1 visão que permita inserção. Justificar sua criação dentro do escopo do projeto.
 
 CREATE VIEW vClienteInfo AS
 (SELECT idCliente, nome, idCidade FROM Cliente );
@@ -13,7 +13,10 @@ SELECT * FROM  vClienteInfo
 INSERT INTO vClienteInfo
 VALUES (11, 'Joana Maria', 5)
 
-b) 2/2 visões robustas (por exemplo, com vários joins) com justificativa semântica, de acordo com os requisitos do projeto/aplicação.
+--Permitir que o usuário tenha acesso apenas aos dados aprovados da tabela Cliente 
+--e também permitir a inserção de dados de forma que não haja erros, pois as colunas escolhidas não aceitam valor NULL.
+
+--b) 2/2 visões robustas (por exemplo, com vários joins) com justificativa semântica, de acordo com os requisitos do projeto/aplicação.
 
 CREATE OR REPLACE VIEW view_cliente_chip
 AS (SELECT cl.nome, cl.cancelado, chi.idnumero, chi.ativo
@@ -38,23 +41,23 @@ AS (SELECT cl.nome, chi.idnumero, pl.descricao, fat.total
  
  
 
-Índices:
+--Índices:
 
-a) 1/3 índices para campos indicados (além dos referentes às PKs e UNIQUEs) com justificativa.
+--a) 1/3 índices para campos indicados (além dos referentes às PKs e UNIQUEs) com justificativa.
 
-    -> nome em cidade
+--    -> nome em cidade
         CREATE INDEX idx_cidades_nomes
         ON cidade
         USING hash(nome)
         
-    -> idcidade em cliente
+--    -> idcidade em cliente
        CREATE  INDEX idx_cliente_fkidcidade
        ON cliente
        USING hash(idcidade)
 
-    -> uf em cidade
+ --   -> uf em cidade
         CREATE  INDEX idx_cidade_uf
         ON cidade
         USING hash(uf)
 
-b) 0/3 Mostrar testes de consultas que demonstrem uso de índice.
+--b) 0/3 Mostrar testes de consultas que demonstrem uso de índice.
