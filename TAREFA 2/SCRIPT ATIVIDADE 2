@@ -82,18 +82,6 @@ WHERE uf = 'PB'
 
 -- teste index idx_cliente_dkidcidade:
 
-CREATE  INDEX idx_cliente_fkidcidade
-ON cliente
-USING hash(idcidade)
 
-DROP INDEX idx_cliente_fkidcidade;
 
-SELECT * FROM cliente
-WHERE nome LIKE 'Al'
-
-EXPLAIN SELECT * FROM cliente
-WHERE nome LIKE 'Al'
-
--- RESULTADOS:
--- 55 msec com INDEX
--- 80 msec sem INDEX
+--teste index idx_cidade_uf
