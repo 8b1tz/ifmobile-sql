@@ -6,11 +6,9 @@ Construção Banco
 
 1) Criação Tabelas (13/13)
     
-2) Povoamento (9/13)
-    - cliente_chip   ---------- NÃO MUDOU
+2) Povoamento (12/13)
     - ligacao  ----------  MUDOU
-    - fatura   ---------- NÃO MUDOU
-    - auditoria  ---------- NÃO MUDOU
+
 
 
 Implementar conforme requisitos e regras do projeto IFMobile
