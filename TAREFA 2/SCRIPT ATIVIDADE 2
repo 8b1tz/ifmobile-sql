@@ -60,4 +60,18 @@ AS (SELECT cl.nome, chi.idnumero, pl.descricao, fat.total
         ON cidade
         USING hash(uf)
 
---b) 0/3 Mostrar testes de consultas que demonstrem uso de índice.
+--b) 1/3 Mostrar testes de consultas que demonstrem uso de índice.
+
+-- teste index idc_cidade_uf: 
+
+CREATE  INDEX idx_cidade_uf
+ON cidade
+USING hash(uf)
+
+DROP INDEX idx_cidade_uf;
+
+SELECT * FROM cidade
+WHERE uf = 'PB'
+
+EXPLAIN SELECT * FROM cidade
+WHERE uf = 'PB'
