@@ -75,3 +75,7 @@ WHERE uf = 'PB'
 
 EXPLAIN SELECT * FROM cidade
 WHERE uf = 'PB'
+
+-- RESULTADOS:
+-- 56 msec com INDEX
+-- 69 msec sem INDEX
