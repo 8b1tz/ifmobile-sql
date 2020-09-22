@@ -1,6 +1,6 @@
 # Projeto Banco de Dados II ( IFmobile)
 
-<h2> Até dia 23/09  -> <bold>3 DIAS</bold></h2>
+<h2> Até dia 23/09  -> <bold>2 DIAS</bold></h2>
 
 Construção Banco
 
