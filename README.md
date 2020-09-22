@@ -4,20 +4,7 @@
 
 Construção Banco
 
-1) Criação Tabelas (0/13)
-    - cobertura
-    - estado
-    - cidade
-    - cliente
-    - operadora
-    - plano
-    - tarifa
-    - plano_tarifa
-    - chip
-    - cliente_chip
-    - ligacao
-    - fatura
-    - auditoria
+1) Criação Tabelas (13/13)
     
 2) Povoamento (0/13)
     - cobertura
