@@ -100,3 +100,30 @@ insert into cliente (idCliente, nome, endereco, bairro, idCidade, dataCadastro, 
 insert into cliente (idCliente, nome, endereco, bairro, idCidade, dataCadastro, cancelado) values (8, 'Brenn Eivers', '8 Alpine Crossing', 'Alpine', 2, '2/9/2020', 'N');
 insert into cliente (idCliente, nome, endereco, bairro, idCidade, dataCadastro, cancelado) values (9, 'Donetta Yokley', '197 Red Cloud Alley', 'Red ', 1, '4/5/2020', 'S');
 insert into cliente (idCliente, nome, endereco, bairro, idCidade, dataCadastro, cancelado) values (10, 'Elna Kellart', '992 Dryden Parkway', 'Dryden', 3, '4/2/2020', 'N');
+
+
+-- tabela tarifa
+
+insert into tarifa (idTarifa, descricao, valor) values (1, 'cliente com desconto (10%)', 194);
+insert into tarifa (idTarifa, descricao, valor) values (2, 'cliente comum', 332);
+insert into tarifa (idTarifa, descricao, valor) values (3, 'cliente com desconto (25%)', 167);
+insert into tarifa (idTarifa, descricao, valor) values (4, 'cliente comum', 260);
+insert into tarifa (idTarifa, descricao, valor) values (5, 'cliente comum', 336);
+insert into tarifa (idTarifa, descricao, valor) values (6, 'cliente comum', 349);
+insert into tarifa (idTarifa, descricao, valor) values (7, 'cliente comum', 286);
+insert into tarifa (idTarifa, descricao, valor) values (8, 'cliente com desconto (20%)', 236);
+insert into tarifa (idTarifa, descricao, valor) values (9, 'cliente comum', 266);
+insert into tarifa (idTarifa, descricao, valor) values (10, 'cliente com desconto (30%)', 176);
+
+-- tabela plano
+
+insert into plano (idPlano, descricao, fminIn, fminout, valor) values (1, 'cliente com desconto (30%),', 568, 38, 110);
+insert into plano (idPlano, descricao, fminIn, fminout, valor) values (2, 'cliente comum', 41, 23, 194);
+insert into plano (idPlano, descricao, fminIn, fminout, valor) values (3, 'cliente com desconto (20%)', 856, 314, 175);
+insert into plano (idPlano, descricao, fminIn, fminout, valor) values (4, 'cliente comum', 986, 85, 200);
+insert into plano (idPlano, descricao, fminIn, fminout, valor) values (5, 'cliente com desconto (25%)', 593, 360, 148);
+insert into plano (idPlano, descricao, fminIn, fminout, valor) values (6, 'cliente comum', 546, 35, 177);
+insert into plano (idPlano, descricao, fminIn, fminout, valor) values (7, 'cliente com desconto (35%)', 723, 405, 106);
+insert into plano (idPlano, descricao, fminIn, fminout, valor) values (8, 'cliente comum', 530, 75, 219);
+insert into plano (idPlano, descricao, fminIn, fminout, valor) values (9, 'cliente com desconto (15%)', 587, 427, 124);
+insert into plano (idPlano, descricao, fminIn, fminout, valor) values (10, 'cliente comum', 86, 32, 269);
