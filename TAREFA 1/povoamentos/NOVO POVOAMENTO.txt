@@ -27,3 +27,16 @@ INSERT INTO cobertura (descricao) VALUES ( 'Santa Catarina');
 INSERT INTO cobertura (descricao) VALUES ('Sergipe');
 INSERT INTO cobertura (descricao) VALUES ( 'São Paulo');
 INSERT INTO cobertura (descricao) VALUES ('Tocantins');
+
+--tabela operadora
+
+insert into operadora (idOperadora, nome) values (1, 'TIM');
+insert into operadora (idOperadora, nome) values (2, 'OI');
+insert into operadora (idOperadora, nome) values (3, 'CLARO');
+insert into operadora (idOperadora, nome) values (4, 'VIVO');
+insert into operadora (idOperadora, nome) values (5, 'NOS');
+insert into operadora (idOperadora, nome) values (6, 'NOWO');
+insert into operadora (idOperadora, nome) values (7, 'MEO');
+insert into operadora (idOperadora, nome) values (8, 'NEXTEL');
+insert into operadora (idOperadora, nome) values (9, 'EMBRATEL');
+insert into operadora (idOperadora, nome) values (10, 'SERCOMTEL');
