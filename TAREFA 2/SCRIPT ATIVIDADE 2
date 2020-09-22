@@ -80,7 +80,7 @@ WHERE uf = 'PB'
 -- 56 msec com INDEX
 -- 69 msec sem INDEX
 
--- teste index idx_cliente_dkidcidade:
+-- teste index idx_cidades_nomes:
 
 CREATE INDEX idx_cidades_nomes
 ON cidade
@@ -100,7 +100,7 @@ WHERE nome LIKE 'Al%'
 
 
 
---teste index idx_cidade_uf:
+--teste index idx_cliente_fkidcidade:
 
 CREATE  INDEX idx_cliente_fkidcidade
 ON cliente
