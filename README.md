@@ -11,7 +11,7 @@ Construção Banco
     - estado  ---------- MUDOU
     - cidade   ---------- NÃO MUDOU V
     - cliente ---------- MUDOU
-    - operadora   ---------- NOVO
+    - operadora   ---------- NOVO V
     - plano   ---------- NÃO MUDOU
     - tarifa   ---------- NÃO MUDOU
     - plano_tarifa   ---------- NOVO
