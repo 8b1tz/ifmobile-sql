@@ -60,7 +60,7 @@ AS (SELECT cl.nome, chi.idnumero, pl.descricao, fat.total
         ON cidade
         USING hash(uf)
 
---b) 1/3 Mostrar testes de consultas que demonstrem uso de índice.
+--b) 3/3 Mostrar testes de consultas que demonstrem uso de índice.
 
 -- teste index idc_cidade_uf: 
 
@@ -100,4 +100,20 @@ WHERE nome LIKE 'Al%'
 
 
 
---teste index idx_cidade_uf
+--teste index idx_cidade_uf:
+
+CREATE  INDEX idx_cliente_fkidcidade
+ON cliente
+USING hash(idcidade)
+
+DROP INDEX idx_cliente_fkidcidade;
+
+SELECT * FROM cliente
+WHERE idcidade = 4
+
+EXPLAIN SELECT * FROM cliente
+WHERE idcidade = 4
+
+-- RESULTADO:
+-- 60 msec com INDEX
+-- 68 msec sem INDEX
