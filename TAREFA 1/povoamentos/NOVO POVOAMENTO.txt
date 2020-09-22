@@ -1,0 +1,29 @@
+--tabela cobertura
+
+INSERT INTO cobertura (descricao) VALUES ('Acre');
+INSERT INTO cobertura (descricao) VALUES ('Alagoas');
+INSERT INTO cobertura (descricao) VALUES ('Amazonas');
+INSERT INTO cobertura (descricao) VALUES ( 'Amapá');
+INSERT INTO cobertura (descricao) VALUES ( 'Bahia');
+INSERT INTO cobertura (descricao) VALUES ( 'Ceará' );
+INSERT INTO cobertura (descricao) VALUES ('Distrito Federal' );
+INSERT INTO cobertura (descricao) VALUES ('Espírito Santo' );
+INSERT INTO cobertura (descricao) VALUES ( 'Goiás' );
+INSERT INTO cobertura (descricao) VALUES ( 'Maranhão');
+INSERT INTO cobertura (descricao) VALUES ('Minas Gerais' );
+INSERT INTO cobertura (descricao) VALUES ('Mato Grosso do Sul');
+INSERT INTO cobertura (descricao) VALUES ('Mato Grosso' );
+INSERT INTO cobertura (descricao) VALUES ( 'Pará');
+INSERT INTO cobertura (descricao) VALUES ('Paraíba' );
+INSERT INTO cobertura (descricao) VALUES ('Pernambuco');
+INSERT INTO cobertura (descricao) VALUES ('Piauí');
+INSERT INTO cobertura (descricao) VALUES ( 'Paraná');
+INSERT INTO cobertura (descricao) VALUES ( 'Rio de Janeiro');
+INSERT INTO cobertura (descricao) VALUES ( 'Rio Grande do Norte');
+INSERT INTO cobertura (descricao) VALUES ('Rondônia');
+INSERT INTO cobertura (descricao) VALUES ('Roraima');
+INSERT INTO cobertura (descricao) VALUES ( 'Rio Grande do Sul');
+INSERT INTO cobertura (descricao) VALUES ( 'Santa Catarina');
+INSERT INTO cobertura (descricao) VALUES ('Sergipe');
+INSERT INTO cobertura (descricao) VALUES ( 'São Paulo');
+INSERT INTO cobertura (descricao) VALUES ('Tocantins');
