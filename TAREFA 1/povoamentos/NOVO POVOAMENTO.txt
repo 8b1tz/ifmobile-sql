@@ -40,3 +40,16 @@ insert into operadora (idOperadora, nome) values (7, 'MEO');
 insert into operadora (idOperadora, nome) values (8, 'NEXTEL');
 insert into operadora (idOperadora, nome) values (9, 'EMBRATEL');
 insert into operadora (idOperadora, nome) values (10, 'SERCOMTEL');
+
+--tabela plano_tarifa
+
+insert into plano_tarifa (idPlano, idTarifa) values (1, 1);
+insert into plano_tarifa (idPlano, idTarifa) values (2, 2);
+insert into plano_tarifa (idPlano, idTarifa) values (3, 3);
+insert into plano_tarifa (idPlano, idTarifa) values (4, 4);
+insert into plano_tarifa (idPlano, idTarifa) values (5, 5);
+insert into plano_tarifa (idPlano, idTarifa) values (6, 6);
+insert into plano_tarifa (idPlano, idTarifa) values (7, 7);
+insert into plano_tarifa (idPlano, idTarifa) values (8, 8);
+insert into plano_tarifa (idPlano, idTarifa) values (9, 9);
+insert into plano_tarifa (idPlano, idTarifa) values (10, 10);
