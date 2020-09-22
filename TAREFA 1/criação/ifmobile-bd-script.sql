@@ -33,7 +33,7 @@ CREATE TABLE estado
   idRegiao int              NOT NULL,
   CONSTRAINT PK_estado      PRIMARY KEY (uf),
   CONSTRAINT UQ_estado_ddd  UNIQUE (ddd),
-  CONSTRAINT FK_estado_idregiao FOREIGN KEY (idregiao) REFERENCES cobertura
+  CONSTRAINT FK_estado_idregiao FOREIGN KEY (idRegiao) REFERENCES cobertura
 );
 
 
