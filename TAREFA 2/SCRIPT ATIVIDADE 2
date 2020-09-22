@@ -2,7 +2,16 @@ SCRIPT ATIVIDADE 2
 
 Visões:
 
-a) 0/1 visão que permita inserção. Justificar sua criação dentro do escopo do projeto.
+a) 1/1 visão que permita inserção. Justificar sua criação dentro do escopo do projeto.
+
+CREATE VIEW vClienteInfo AS
+(SELECT idCliente, nome, idCidade FROM Cliente );
+
+SELECT * FROM  Cliente
+SELECT * FROM  vClienteInfo
+
+INSERT INTO vClienteInfo
+VALUES (11, 'Joana Maria', 5)
 
 b) 2/2 visões robustas (por exemplo, com vários joins) com justificativa semântica, de acordo com os requisitos do projeto/aplicação.
 
