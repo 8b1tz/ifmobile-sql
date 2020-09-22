@@ -53,3 +53,35 @@ insert into plano_tarifa (idPlano, idTarifa) values (7, 7);
 insert into plano_tarifa (idPlano, idTarifa) values (8, 8);
 insert into plano_tarifa (idPlano, idTarifa) values (9, 9);
 insert into plano_tarifa (idPlano, idTarifa) values (10, 10);
+
+
+
+-- tabela estado
+
+INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('AC', 'Acre', 68, 1);
+INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('AL', 'Alagoas', 82, 2);
+INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('AM', 'Amazonas', 92, 3);
+INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('AP', 'Amapá', 96, 4);
+INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('BA', 'Bahia', 71, 5);
+INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('CE', 'Ceará', 85,  6);
+INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('DF', 'Distrito Federal', 61,  7);
+INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('ES', 'Espírito Santo', 27,  8);
+INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('GO', 'Goiás', 62,  9);
+INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('MA', 'Maranhão', 98, 10);
+INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('MG', 'Minas Gerais', 31,  11);
+INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('MS', 'Mato Grosso do Sul', 67, 12);
+INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('MT', 'Mato Grosso',65,  13);
+INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('PA', 'Pará', 91, 14);
+INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('PB', 'Paraíba', 83, 15 );
+INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('PE', 'Pernambuco', 81, 16);
+INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('PI', 'Piauí', 86, 17);
+INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('PR', 'Paraná', 41, 18);
+INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('RJ', 'Rio de Janeiro', 21, 19);
+INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('RN', 'Rio Grande do Norte', 84, 20);
+INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('RO', 'Rondônia', 69, 21);
+INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('RR', 'Roraima', 95, 22);
+INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('RS', 'Rio Grande do Sul', 51, 23 );
+INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('SC', 'Santa Catarina', 47, 24);
+INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('SE', 'Sergipe', 79, 25);
+INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('SP', 'São Paulo', 11, 26);
+INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('TO', 'Tocantins', 63, 27);
