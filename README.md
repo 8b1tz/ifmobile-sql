@@ -6,8 +6,8 @@ Construção Banco
 
 1) Criação Tabelas (13/13)
     
-2) Povoamento (12/13)
-    - ligacao  ----------  MUDOU
+2) Povoamento (13/13)
+
 
 
 
