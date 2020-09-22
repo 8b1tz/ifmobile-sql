@@ -7,19 +7,20 @@ Construção Banco
 1) Criação Tabelas (13/13)
     
 2) Povoamento (0/13)
-    - cobertura
-    - estado
-    - cidade
-    - cliente
-    - operadora
-    - plano
-    - tarifa
-    - plano_tarifa
-    - chip
-    - cliente_chip
-    - ligacao
-    - fatura
-    - auditoria
+    - cobertura   ---------- NOVO 
+    - estado  ---------- MUDOU
+    - cidade   ---------- NÃO MUDOU
+    - cliente ---------- MUDOU
+    - operadora   ---------- NOVO
+    - plano   ---------- NÃO MUDOU
+    - tarifa   ---------- NÃO MUDOU
+    - plano_tarifa   ---------- NOVO
+    - chip  ---------- MUDOU
+    - cliente_chip   ---------- NÃO MUDOU
+    - ligacao  ----------  MUDOU
+    - fatura   ---------- NÃO MUDOU
+    - auditoria  ---------- NÃO MUDOU
+
 
 Implementar conforme requisitos e regras do projeto IFMobile
 
