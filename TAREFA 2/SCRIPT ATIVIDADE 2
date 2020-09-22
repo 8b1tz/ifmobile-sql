@@ -98,8 +98,6 @@ WHERE nome LIKE 'Al%'
 -- 68 msec com INDEX
 -- 75 msec sem INDEX
 
-
-
 --teste index idx_cliente_fkidcidade:
 
 CREATE  INDEX idx_cliente_fkidcidade
@@ -117,3 +115,6 @@ WHERE idcidade = 4
 -- RESULTADO:
 -- 60 msec com INDEX
 -- 68 msec sem INDEX
+
+/* As colunas tem em média 10 linhas, então, nem sempre a consulta usando índice será a mais rápida, porém, com uma tabela contendo muitos dados é perfeita a percepção 
+da rapidez utilizando os índices. */
