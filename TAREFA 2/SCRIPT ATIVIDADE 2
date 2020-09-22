@@ -43,7 +43,7 @@ AS (SELECT cl.nome, chi.idnumero, pl.descricao, fat.total
 
 --Índices:
 
---a) 1/3 índices para campos indicados (além dos referentes às PKs e UNIQUEs) com justificativa.
+--a) 3/3 índices para campos indicados (além dos referentes às PKs e UNIQUEs) com justificativa.
 
 --    -> nome em cidade
         CREATE INDEX idx_cidades_nomes
@@ -79,3 +79,21 @@ WHERE uf = 'PB'
 -- RESULTADOS:
 -- 56 msec com INDEX
 -- 69 msec sem INDEX
+
+-- teste index idx_cliente_dkidcidade:
+
+CREATE  INDEX idx_cliente_fkidcidade
+ON cliente
+USING hash(idcidade)
+
+DROP INDEX idx_cliente_fkidcidade;
+
+SELECT * FROM cliente
+WHERE nome LIKE 'Al'
+
+EXPLAIN SELECT * FROM cliente
+WHERE nome LIKE 'Al'
+
+-- RESULTADOS:
+-- 55 msec com INDEX
+-- 80 msec sem INDEX
