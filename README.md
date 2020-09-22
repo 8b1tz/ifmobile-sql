@@ -6,9 +6,9 @@ Construção Banco
 
 1) Criação Tabelas (13/13)
     
-2) Povoamento (2/13)
+2) Povoamento (4/13)
     - cobertura   ---------- NOVO V
-    - estado  ---------- MUDOU
+    - estado  ---------- MUDOU V
     - cidade   ---------- NÃO MUDOU V
     - cliente ---------- MUDOU
     - operadora   ---------- NOVO V
