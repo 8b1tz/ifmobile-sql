@@ -6,8 +6,7 @@ Construção Banco
 
 1) Criação Tabelas (13/13)
     
-2) Povoamento (8/13)
-    - chip  ---------- MUDOU
+2) Povoamento (9/13)
     - cliente_chip   ---------- NÃO MUDOU
     - ligacao  ----------  MUDOU
     - fatura   ---------- NÃO MUDOU
