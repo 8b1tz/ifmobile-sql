@@ -1,32 +1,32 @@
 --tabela cobertura
 
-INSERT INTO cobertura (descricao) VALUES ('Acre');
-INSERT INTO cobertura (descricao) VALUES ('Alagoas');
-INSERT INTO cobertura (descricao) VALUES ('Amazonas');
-INSERT INTO cobertura (descricao) VALUES ( 'Amapá');
-INSERT INTO cobertura (descricao) VALUES ( 'Bahia');
-INSERT INTO cobertura (descricao) VALUES ( 'Ceará' );
-INSERT INTO cobertura (descricao) VALUES ('Distrito Federal' );
-INSERT INTO cobertura (descricao) VALUES ('Espírito Santo' );
-INSERT INTO cobertura (descricao) VALUES ( 'Goiás' );
-INSERT INTO cobertura (descricao) VALUES ( 'Maranhão');
-INSERT INTO cobertura (descricao) VALUES ('Minas Gerais' );
-INSERT INTO cobertura (descricao) VALUES ('Mato Grosso do Sul');
-INSERT INTO cobertura (descricao) VALUES ('Mato Grosso' );
-INSERT INTO cobertura (descricao) VALUES ( 'Pará');
-INSERT INTO cobertura (descricao) VALUES ('Paraíba' );
-INSERT INTO cobertura (descricao) VALUES ('Pernambuco');
-INSERT INTO cobertura (descricao) VALUES ('Piauí');
-INSERT INTO cobertura (descricao) VALUES ( 'Paraná');
-INSERT INTO cobertura (descricao) VALUES ( 'Rio de Janeiro');
-INSERT INTO cobertura (descricao) VALUES ( 'Rio Grande do Norte');
-INSERT INTO cobertura (descricao) VALUES ('Rondônia');
-INSERT INTO cobertura (descricao) VALUES ('Roraima');
-INSERT INTO cobertura (descricao) VALUES ( 'Rio Grande do Sul');
-INSERT INTO cobertura (descricao) VALUES ( 'Santa Catarina');
-INSERT INTO cobertura (descricao) VALUES ('Sergipe');
-INSERT INTO cobertura (descricao) VALUES ( 'São Paulo');
-INSERT INTO cobertura (descricao) VALUES ('Tocantins');
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Acre');
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Alagoas');
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Amazonas');
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Amapá');
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Bahia');
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Ceará' );
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Distrito Federal' );
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Espírito Santo' );
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Goiás' );
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Maranhão');
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Minas Gerais' );
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Mato Grosso do Sul');
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Mato Grosso' );
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Pará');
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Paraíba' );
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Pernambuco');
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Piauí');
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Paraná');
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Rio de Janeiro');
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Rio Grande do Norte');
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Rondônia');
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Roraima');
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Rio Grande do Sul');
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Santa Catarina');
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Sergipe');
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'São Paulo');
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Tocantins');
 
 --tabela operadora
 
@@ -41,50 +41,37 @@ insert into operadora (nome) values ('NEXTEL');
 insert into operadora (nome) values ('EMBRATEL');
 insert into operadora (nome) values ('SERCOMTEL');
 
---tabela plano_tarifa
-
-insert into plano_tarifa (idPlano, idTarifa) values (1, 1);
-insert into plano_tarifa (idPlano, idTarifa) values (2, 2);
-insert into plano_tarifa (idPlano, idTarifa) values (3, 3);
-insert into plano_tarifa (idPlano, idTarifa) values (4, 4);
-insert into plano_tarifa (idPlano, idTarifa) values (5, 5);
-insert into plano_tarifa (idPlano, idTarifa) values (6, 6);
-insert into plano_tarifa (idPlano, idTarifa) values (7, 7);
-insert into plano_tarifa (idPlano, idTarifa) values (8, 8);
-insert into plano_tarifa (idPlano, idTarifa) values (9, 9);
-insert into plano_tarifa (idPlano, idTarifa) values (10, 10);
-
 
 
 -- tabela estado
 
-INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('AC', 'Acre', 68, 1);
-INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('AL', 'Alagoas', 82, 2);
-INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('AM', 'Amazonas', 92, 3);
-INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('AP', 'Amapá', 96, 4);
-INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('BA', 'Bahia', 71, 5);
-INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('CE', 'Ceará', 85,  6);
-INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('DF', 'Distrito Federal', 61,  7);
-INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('ES', 'Espírito Santo', 27,  8);
-INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('GO', 'Goiás', 62,  9);
-INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('MA', 'Maranhão', 98, 10);
-INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('MG', 'Minas Gerais', 31,  11);
-INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('MS', 'Mato Grosso do Sul', 67, 12);
-INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('MT', 'Mato Grosso',65,  13);
-INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('PA', 'Pará', 91, 14);
-INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('PB', 'Paraíba', 83, 15 );
-INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('PE', 'Pernambuco', 81, 16);
-INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('PI', 'Piauí', 86, 17);
-INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('PR', 'Paraná', 41, 18);
-INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('RJ', 'Rio de Janeiro', 21, 19);
-INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('RN', 'Rio Grande do Norte', 84, 20);
-INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('RO', 'Rondônia', 69, 21);
-INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('RR', 'Roraima', 95, 22);
-INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('RS', 'Rio Grande do Sul', 51, 23 );
-INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('SC', 'Santa Catarina', 47, 24);
-INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('SE', 'Sergipe', 79, 25);
-INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('SP', 'São Paulo', 11, 26);
-INSERT INTO estado (uf, nome, ddd, idregiao) VALUES ('TO', 'Tocantins', 63, 27);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('AC', 'Acre', 68, 1);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('AL', 'Alagoas', 82, 2);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('AM', 'Amazonas', 92, 3);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('AP', 'Amapá', 96, 4);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('BA', 'Bahia', 71, 5);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('CE', 'Ceará', 85,  6);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('DF', 'Distrito Federal', 61,  7);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('ES', 'Espírito Santo', 27,  8);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('GO', 'Goiás', 62,  9);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('MA', 'Maranhão', 98, 10);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('MG', 'Minas Gerais', 31,  11);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('MS', 'Mato Grosso do Sul', 67, 12);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('MT', 'Mato Grosso',65,  13);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('PA', 'Pará', 91, 14);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('PB', 'Paraíba', 83, 15 );
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('PE', 'Pernambuco', 81, 16);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('PI', 'Piauí', 86, 17);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('PR', 'Paraná', 41, 18);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('RJ', 'Rio de Janeiro', 21, 19);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('RN', 'Rio Grande do Norte', 84, 20);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('RO', 'Rondônia', 69, 21);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('RR', 'Roraima', 95, 22);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('RS', 'Rio Grande do Sul', 51, 23 );
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('SC', 'Santa Catarina', 47, 24);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('SE', 'Sergipe', 79, 25);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('SP', 'São Paulo', 11, 26);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('TO', 'Tocantins', 63, 27);
 
 
 -- Codigo da tabela cidade é uma Contribuição do professor Alex Sandro.
@@ -5722,6 +5709,20 @@ insert into cliente_chip (idNumero, idCliente) values ('83985212346', 8);
 insert into cliente_chip (idNumero, idCliente) values ('84985112345', 7);
 insert into cliente_chip (idNumero, idCliente) values ('83985212345', 6);
 insert into cliente_chip (idNumero, idCliente) values ('98985212345', 5);
+
+
+--tabela plano_tarifa
+
+insert into plano_tarifa (idPlano, idTarifa) values (1, 1);
+insert into plano_tarifa (idPlano, idTarifa) values (2, 2);
+insert into plano_tarifa (idPlano, idTarifa) values (3, 3);
+insert into plano_tarifa (idPlano, idTarifa) values (4, 4);
+insert into plano_tarifa (idPlano, idTarifa) values (5, 5);
+insert into plano_tarifa (idPlano, idTarifa) values (6, 6);
+insert into plano_tarifa (idPlano, idTarifa) values (7, 7);
+insert into plano_tarifa (idPlano, idTarifa) values (8, 8);
+insert into plano_tarifa (idPlano, idTarifa) values (9, 9);
+insert into plano_tarifa (idPlano, idTarifa) values (10, 10);
 
 -- TABELA: fatura
 
