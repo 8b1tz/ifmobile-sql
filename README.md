@@ -6,15 +6,10 @@ Construção Banco
 
 1) Criação Tabelas (13/13)
     
-2) Povoamento (4/13)
-    - cobertura   ---------- NOVO V
-    - estado  ---------- MUDOU V
-    - cidade   ---------- NÃO MUDOU V
+2) Povoamento (5/13)
     - cliente ---------- MUDOU
-    - operadora   ---------- NOVO V
     - plano   ---------- NÃO MUDOU
     - tarifa   ---------- NÃO MUDOU
-    - plano_tarifa   ---------- NOVO
     - chip  ---------- MUDOU
     - cliente_chip   ---------- NÃO MUDOU
     - ligacao  ----------  MUDOU
