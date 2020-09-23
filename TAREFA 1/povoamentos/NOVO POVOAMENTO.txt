@@ -6,6 +6,8 @@
 
 --tabela cobertura
 
+-- No dicionário de dados a coluna idRegiao estava do tipo char(2), enquanto na criação do banco ela estava como SERIAL,  optamos por seguir o SCRIPT criado pelo professor.
+
 INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Acre');
 INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Alagoas');
 INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Amazonas');
