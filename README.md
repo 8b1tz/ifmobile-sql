@@ -1,7 +1,10 @@
 # Projeto Banco de Dados II ( IFmobile)
 
-<h2> Até dia 23/09  -> <bold>2 DIAS</bold></h2>
 
+<h2>Alunos</h2> <br>
+    - Ana Júlia Oliveira Lins - 20191370002 <br>
+    - Gabriel Xavier Silva - 20191370025 <br>
+    - Yohanna de Oliveira Cavalcanti - 20191370003 <br>
 
 Implementar conforme requisitos e regras do projeto IFMobile
 
@@ -11,7 +14,7 @@ Implementar conforme requisitos e regras do projeto IFMobile
 
 2)	Índices:<br>
     - a) 3/3 índices para campos indicados (além dos referentes às PKs e UNIQUEs) com justificativa. <br>
-    - b) 0/3 Mostrar testes de consultas que demonstrem uso de índice.  
+    - b) 3/3 Mostrar testes de consultas que demonstrem uso de índice.  
 
 
 
