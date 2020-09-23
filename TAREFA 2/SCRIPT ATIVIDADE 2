@@ -66,6 +66,14 @@ AS (SELECT cl.nome, chi.idnumero, pl.descricao, fat.total
         ON cidade
         USING hash(uf)
 
+/*
+
+Estes campos foram escolhidos pois são essenciais em buscas e filtragens, com buscas constantes, 
+levando em conta outras empresas telefonicas de porte grande, 
+sem contar com os requisitos básicos de índices, como apresentado nos slides de conteúdo.
+
+*/
+
 --b) 3/3 Mostrar testes de consultas que demonstrem uso de índice.
 
 -- teste index idc_cidade_uf: 
