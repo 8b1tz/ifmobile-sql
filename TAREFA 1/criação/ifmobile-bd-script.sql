@@ -1,5 +1,11 @@
 CREATE DATABASE ifmobile;
 
+--Alunos:
+
+--Ana Júlia Oliveira Lins - 20191370002
+--Gabriel Xavier Silva - 20191370025
+--Yohanna de Oliveira Cavalcanti - 20191370003
+
 -- \c ifmobile
 
 DROP TABLE IF EXISTS cobertura CASCADE;
