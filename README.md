@@ -5,8 +5,8 @@
     - Ana Júlia Oliveira Lins - 20191370002 <br>
     - Gabriel Xavier Silva - 20191370025 <br>
     - Yohanna de Oliveira Cavalcanti - 20191370003 <br>
-
-Implementar conforme requisitos e regras do projeto IFMobile
+    
+<hr>
 
 1)	Visões:<br>
     - a) 1/1 visão que permita inserção. Justificar sua criação dentro do escopo do projeto. <br>
