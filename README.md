@@ -1,6 +1,6 @@
-# Projeto Banco de Dados II ( IFmobile) 02/11
+# Projeto IFmobile 02/11, Faltam (7) dias !
 
-Faltam (1/14)
+Faltam (1/14) Atividades
  
 - Criação e povoamento                                      - DONE
 - Especificações tabela tarifa                               - TODO
