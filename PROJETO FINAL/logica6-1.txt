@@ -27,5 +27,5 @@
                         Else, roda outro numero
 
 
-    
+    VERIFICAR O ponto 7.2.b
 
