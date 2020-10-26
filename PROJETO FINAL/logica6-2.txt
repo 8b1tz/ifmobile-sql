@@ -1,0 +1,15 @@
+No programa irá ter campos para preencher, que serão:
+   - A data e hora (DD/MM/AAAA HH:MM:SS)
+   - Quem está ligando
+   - DDD de onde está ligando
+   - Quem está recebendo a ligação
+   - DDD de quem está recebendo a ligação
+   - Duração em HH:MM:SS
+
+Antes de inserir, ele irá fazer uma verificação:
+    O numeros Existem?
+        Se não, Lança uma excessão, impedindo de continuar (numero não existe)
+        Se sim:
+        O numero que está ligando está ativo?
+            Se sim, continue
+            Else, Lança uma excessão, impedindo de continuar (numero desativado)
