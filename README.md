@@ -1,9 +1,9 @@
 # Projeto IFmobile 02/11, Faltam (7) dias !
 
-Faltam (1/14) Atividades
+Faltam (1/12) Atividades
+
+- Organização                                               - TODO
  
-- Criação e povoamento                                      - DONE
-- Especificações tabela tarifa                               - TODO
 - Geração do número telefônico                               - TODO
 - Ligações telefônicas                                       - TODO
 - O cliente                                                  - TODO
@@ -15,5 +15,4 @@ Faltam (1/14) Atividades
 - Visões                                                    - TODO
 
 - Interface e servidor                                      - TODO
-- Organização                                               - TODO
 - Revisão                                                   - TODO
