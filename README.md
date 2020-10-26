@@ -1,6 +1,6 @@
 # Projeto IFmobile 02/11, Faltam (7) dias !
 
-Faltam (1/12) Atividades
+Faltam (0/12) Atividades
 
 - Organização                                               - TODO
  
