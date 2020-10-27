@@ -1,0 +1,19 @@
+Esse ponto fala sobre a auditoria, sobre como funciona. Nada
+muito diferente do que a gente já sabe, é mais uma questão de 
+inserção e de como usar os dados da tabela.
+
+- Precisa de conversa sobre como será implementada no programa -
+- Precisa de conversa sobre as implementações, se serão -
+- o suficiente ou se não precisam -
+
+
+Página/lugar para adição:
+    Campos de adição da auditoria:
+        Numero do cliente que entrará na auditoria.
+        IDCliente do cliente, resgatado com base no numero.
+        A data de inicio da auditoria
+        A data de fim da auditoria
+
+Página/lugar para Retomar os dados da auditoria
+
+Página para retornar as ligações 
