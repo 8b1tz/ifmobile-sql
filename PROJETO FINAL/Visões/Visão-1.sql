@@ -36,4 +36,4 @@ ON cli.idcidade = ci.idcidade
 JOIN cliente_chip clichi 
 ON cli.idcliente = clichi.idcliente 
 JOIN chip 
-ON clichi.idnumero = chip.idnumero AND chip.ativo = 'S';)
+ON clichi.idnumero = chip.idnumero AND chip.ativo = 'S');
