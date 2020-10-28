@@ -1,6 +1,6 @@
 # Projeto IFmobile 08/11, Faltam (12) dias !
 
-Faltam (2/13) Atividades
+Faltam (3/13) Atividades
 
 
  -  Escolha de numeros: esta função deve verificar quais números já foram criados e ficaram inativos (desistência do cliente). Não é para adicionar um novo número no banco       - TODO
@@ -9,7 +9,6 @@ Faltam (2/13) Atividades
  -  Clientes com cadastro cancelados não podem receber um novo chip (verificação automática)       - TODO
  -  Clientes que cancelam seu cadastro devem liberar o chip de sua posse para futuros usuários (ação automática)       - TODO
  -  Povoamento da tabela ligação conforme regras estabelecidas no item 7.2       - TODO
- -  Apresentar  e implementar uma situação coerente em que se encaixa a aplicação de um trigger       - TODO
 - Organização                                               - TODO
 - Interface                                                 - TODO
 - Servidor                                                  - TODO
@@ -17,6 +16,7 @@ Faltam (2/13) Atividades
 
 --------------------------------
  
- - Visões                                                    - DONE
-  -  Gerar numero telefonico: o numero gerado tem que ser um que ainda não esteja na base de dados        - DONE <br><br>
+  - Visões                                                    - DONE
+  -  Gerar numero telefonico: o numero gerado tem que ser um que ainda não esteja na base de dados        - DONE 
+  -  Apresentar  e implementar uma situação coerente em que se encaixa a aplicação de um trigger       - DONE
 
