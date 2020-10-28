@@ -1,8 +1,7 @@
 # Projeto IFmobile 08/11, Faltam (12) dias !
 
-Faltam (1/13) Atividades
+Faltam (2/13) Atividades
 
- -  Gerar numero telefonico: o numero gerado tem que ser um que ainda não esteja na base de dados        - TODO <br><br>
 
  -  Escolha de numeros: esta função deve verificar quais números já foram criados e ficaram inativos (desistência do cliente). Não é para adicionar um novo número no banco       - TODO
  -  Lançamento das faturas para cada chip ativo, de acordo com o plano e consumo do mês e ano de referência. As faturas devem ser efetivadas de uma única vez; qualquer falha, cancela as parcelas já enviadas ao banco       - TODO
@@ -19,4 +18,5 @@ Faltam (1/13) Atividades
 --------------------------------
  
  - Visões                                                    - DONE
+  -  Gerar numero telefonico: o numero gerado tem que ser um que ainda não esteja na base de dados        - DONE <br><br>
 
