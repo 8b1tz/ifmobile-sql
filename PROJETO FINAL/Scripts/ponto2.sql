@@ -5,7 +5,10 @@ DECLARE
 BEGIN
 -- aqui iremos retornar uma tabela que mostra chip que estão disponiveis para o uso e que não tem problemas técnicos;
 -- disponiveis -> disponivel ='S' e sem problemas -> ativo = 'S'
-RETURN QUERY SELECT idnumero, ativo,disponivel FROM chip WHERE ativo = 'S' AND disponivel ='S' limit 5;
+RETURN QUERY SELECT idnumero, ativo,disponivel 
+					FROM chip 
+					WHERE ativo = 'S' AND disponivel ='S' 
+					LIMIT 5 OFFSET FLOOR(random() * ((SELECT COUNT(*) FROM chip WHERE ativo = 'S' AND disponivel ='S')-1)) ;
 END; $$
 LANGUAGE 'plpgsql';
 
