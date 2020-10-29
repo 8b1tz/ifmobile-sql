@@ -1,6 +1,6 @@
 # Projeto IFmobile 08/11, Faltam (12) dias !
 
-Faltam (5/13) Atividades
+Faltam (6/13) Atividades
 
 
  -  Escolha de numeros: esta função deve verificar quais números já foram criados e ficaram inativos (desistência do cliente). Não é para adicionar um novo número no banco       - TODO
