@@ -1,6 +1,6 @@
-# Projeto IFmobile 08/11, Faltam (8) dias !
+# Projeto IFmobile 08/11, Faltam ( 8 ) dias !
 
-Faltam (7/13) Atividades
+Faltam ( 6 ) Atividades
 
 
  -  Lançamento das faturas para cada chip ativo, de acordo com o plano e consumo do mês e ano de referência. As faturas devem ser efetivadas de uma única vez; qualquer falha, cancela as parcelas já enviadas ao banco       - TODO
