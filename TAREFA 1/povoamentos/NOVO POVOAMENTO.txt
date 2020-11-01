@@ -5679,16 +5679,15 @@ insert into tarifa (idTarifa, descricao, valor) values (10, 'cliente com descont
 
 -- tabela plano
 
-insert into plano (idPlano, descricao, fminIn, fminout, valor) values (1, 'cliente com desconto (30%),', 568, 38, 110);
-insert into plano (idPlano, descricao, fminIn, fminout, valor) values (2, 'cliente comum', 41, 23, 194);
-insert into plano (idPlano, descricao, fminIn, fminout, valor) values (3, 'cliente com desconto (20%)', 856, 314, 175);
-insert into plano (idPlano, descricao, fminIn, fminout, valor) values (4, 'cliente comum', 986, 85, 200);
-insert into plano (idPlano, descricao, fminIn, fminout, valor) values (5, 'cliente com desconto (25%)', 593, 360, 148);
-insert into plano (idPlano, descricao, fminIn, fminout, valor) values (6, 'cliente comum', 546, 35, 177);
-insert into plano (idPlano, descricao, fminIn, fminout, valor) values (7, 'cliente com desconto (35%)', 723, 405, 106);
-insert into plano (idPlano, descricao, fminIn, fminout, valor) values (8, 'cliente comum', 530, 75, 219);
-insert into plano (idPlano, descricao, fminIn, fminout, valor) values (9, 'cliente com desconto (15%)', 587, 427, 124);
-insert into plano (idPlano, descricao, fminIn, fminout, valor) values (10, 'cliente comum', 86, 32, 269);
+insert into plano (idPlano, descricao, fminIn, fminout, valor) values (1, 'Prézão', 0, 0, 0);
+insert into plano (idPlano, descricao, fminIn, fminout, valor) values (2, 'Flex', 60, 30, 35.00);
+insert into plano (idPlano, descricao, fminIn, fminout, valor) values (3, 'Controle', 90, 60, 55.00);
+insert into plano (idPlano, descricao, fminIn, fminout, valor) values (4, 'Pós-pago Simples', 120, 95, 64.99);
+insert into plano (idPlano, descricao, fminIn, fminout, valor) values (5, 'Pós-pago Melhorado', 150, 120, 78.00);
+insert into plano (idPlano, descricao, fminIn, fminout, valor) values (6, 'Pós Premium', 200, 150, 85.00);
+insert into plano (idPlano, descricao, fminIn, fminout, valor) values (7, 'Pós Semi-Infinitus', 1000, 500, 120.00);
+insert into plano (idPlano, descricao, fminIn, fminout, valor) values (8, 'Pós Infinitus', 5000, 3000, 219.98);
+
 
 
 -- TABELA: chip
@@ -5700,10 +5699,10 @@ insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('95
 insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('85985112346', 3, 3, 'S', 'N');
 insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('63985212345', 4, 4, 'S', 'N');
 insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('85985112345', 5, 5, 'S', 'N');
-insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('83985212346', 5, 6, 'N', 'S');
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('83985212346', 5, 6, 'S', 'S');
 insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('84985112345', 7, 4, 'S', 'N');
-insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('83985212345', 8, 8, 'N', 'N');
-insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('98985212345', 9, 9, 'S', 'S');
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('83985212345', 8, 8, 'S', 'N');
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('98985212345', 9, 7, 'S', 'S');
 
 -- TABELA: cliente_chip
 
