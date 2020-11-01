@@ -5666,16 +5666,15 @@ insert into cliente (idCliente, nome, endereco, bairro, idCidade, dataCadastro, 
 
 -- tabela tarifa
 
-insert into tarifa (idTarifa, descricao, valor) values (1, 'cliente com desconto (10%)', 194);
-insert into tarifa (idTarifa, descricao, valor) values (2, 'cliente comum', 332);
-insert into tarifa (idTarifa, descricao, valor) values (3, 'cliente com desconto (25%)', 167);
-insert into tarifa (idTarifa, descricao, valor) values (4, 'cliente comum', 260);
-insert into tarifa (idTarifa, descricao, valor) values (5, 'cliente comum', 336);
-insert into tarifa (idTarifa, descricao, valor) values (6, 'cliente comum', 349);
-insert into tarifa (idTarifa, descricao, valor) values (7, 'cliente comum', 286);
-insert into tarifa (idTarifa, descricao, valor) values (8, 'cliente com desconto (20%)', 236);
-insert into tarifa (idTarifa, descricao, valor) values (9, 'cliente comum', 266);
-insert into tarifa (idTarifa, descricao, valor) values (10, 'cliente com desconto (30%)', 176);
+insert into tarifa (idTarifa, descricao, valor) values (1, 'Prézão', 0);
+insert into tarifa (idTarifa, descricao, valor) values (2, 'Flex', 35.00);
+insert into tarifa (idTarifa, descricao, valor) values (3, 'Controle', 55.00);
+insert into tarifa (idTarifa, descricao, valor) values (4, 'Pós-pago Simples', 64.99);
+insert into tarifa (idTarifa, descricao, valor) values (5, 'Pós-pago Melhorado', 78.00);
+insert into tarifa (idTarifa, descricao, valor) values (6, 'Pós Premium', 85.00);
+insert into tarifa (idTarifa, descricao, valor) values (7, 'Pós Semi-Infinitus', 120.00);
+insert into tarifa (idTarifa, descricao, valor) values (8, 'Pós Infinitus', 219.98);
+
 
 -- tabela plano
 
@@ -5728,8 +5727,7 @@ insert into plano_tarifa (idPlano, idTarifa) values (5, 5);
 insert into plano_tarifa (idPlano, idTarifa) values (6, 6);
 insert into plano_tarifa (idPlano, idTarifa) values (7, 7);
 insert into plano_tarifa (idPlano, idTarifa) values (8, 8);
-insert into plano_tarifa (idPlano, idTarifa) values (9, 9);
-insert into plano_tarifa (idPlano, idTarifa) values (10, 10);
+
 
 -- TABELA: fatura
 
