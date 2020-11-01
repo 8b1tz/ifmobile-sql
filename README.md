@@ -1,4 +1,4 @@
-# Projeto IFmobile 08/11, Faltam ( 8 ) dias !
+# Projeto IFmobile 08/11, Faltam ( 7 ) dias !
 
 Faltam ( 6 ) Atividades
 
