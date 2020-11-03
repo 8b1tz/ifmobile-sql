@@ -10,33 +10,14 @@
 
 -- No dicionário de dados a coluna idRegiao estava do tipo char(2), enquanto na criação do banco ela estava como SERIAL, então optamos por seguir o SCRIPT criado pelo professor.
 
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Acre');
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Alagoas');
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Amazonas');
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Amapá');
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Bahia');
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Ceará' );
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Distrito Federal' );
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Espírito Santo' );
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Goiás' );
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Maranhão');
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Minas Gerais' );
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Mato Grosso do Sul');
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Mato Grosso' );
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Pará');
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Paraíba' );
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Pernambuco');
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Piauí');
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Paraná');
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Rio de Janeiro');
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Rio Grande do Norte');
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Rondônia');
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Roraima');
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Rio Grande do Sul');
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Santa Catarina');
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Sergipe');
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'São Paulo');
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Tocantins');
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Regional Nordeste area 1'); -- 1
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Regional Nordeste area 2'); -- 2
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Regional Norte');           -- 3
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Regiao Sudeste area 1');    -- 4
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Regiao Sudeste area 2');    -- 5
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Regiao Sul');               -- 6
+INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Regiao Centro-Oeste'); 
+
 
 --tabela operadora
 
@@ -53,36 +34,50 @@ insert into operadora (nome) values ('SERCOMTEL');
 
 
 
--- tabela estado
-
-INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('AC', 'Acre', 68, 1);
-INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('AL', 'Alagoas', 82, 2);
+-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-- TABELA: Estados
+-- Contribuição: professor Alex Sandro
+-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-- Regiao Norte
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('AC', 'Acre', 68, 3);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('AP', 'Amapá', 96, 3);
 INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('AM', 'Amazonas', 92, 3);
-INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('AP', 'Amapá', 96, 4);
-INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('BA', 'Bahia', 71, 5);
-INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('CE', 'Ceará', 85,  6);
-INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('DF', 'Distrito Federal', 61,  7);
-INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('ES', 'Espírito Santo', 27,  8);
-INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('GO', 'Goiás', 62,  9);
-INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('MA', 'Maranhão', 98, 10);
-INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('MG', 'Minas Gerais', 31,  11);
-INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('MS', 'Mato Grosso do Sul', 67, 12);
-INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('MT', 'Mato Grosso',65,  13);
-INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('PA', 'Pará', 91, 14);
-INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('PB', 'Paraíba', 83, 15 );
-INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('PE', 'Pernambuco', 81, 16);
-INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('PI', 'Piauí', 86, 17);
-INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('PR', 'Paraná', 41, 18);
-INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('RJ', 'Rio de Janeiro', 21, 19);
-INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('RN', 'Rio Grande do Norte', 84, 20);
-INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('RO', 'Rondônia', 69, 21);
-INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('RR', 'Roraima', 95, 22);
-INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('RS', 'Rio Grande do Sul', 51, 23 );
-INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('SC', 'Santa Catarina', 47, 24);
-INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('SE', 'Sergipe', 79, 25);
-INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('SP', 'São Paulo', 11, 26);
-INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('TO', 'Tocantins', 63, 27);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('PA', 'Pará', 91, 3);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('RO', 'Rondônia', 69, 3);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('RR', 'Roraima', 95, 3);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('TO', 'Tocantins',63,3);
 
+-- Regiao Nordeste area 1
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('CE', 'Ceará', 85, 1);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('MA', 'Maranhão', 98, 1);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('PB', 'Paraíba', 83, 1);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('PI', 'Piauí', 86, 1);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('RN', 'Rio Grande do Norte', 84, 1);
+
+-- Regiao Nordeste area 2
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('PE', 'Pernambuco', 81, 2);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('BA', 'Bahia', 71, 2);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('AL', 'Alagoas', 82, 2);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('SE', 'Sergipe', 79, 2);
+
+-- Regiao Centro-Oeste
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('DF', 'Distrito Federal', 61, 7);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('GO', 'Goiás', 62, 7);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('MS', 'Mato Grosso do Sul', 67, 7);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('MT', 'Mato Grosso', 65, 7);
+
+-- Regiao Sul
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('PR', 'Paraná', 41, 6);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('RS', 'Rio Grande do Sul', 51, 6);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('SC', 'Santa Catarina', 47, 6);
+
+-- Regiao Sudeste area 1
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('SP', 'São Paulo', 11, 4);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('ES', 'Espírito Santo',27, 4 );
+
+-- Regiao Sudeste area 2
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('RJ', 'Rio de Janeiro', 21, 5);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('MG', 'Minas Gerais', 31, 5);
 
 -- Codigo da tabela cidade é uma Contribuição do professor Alex Sandro.
 
