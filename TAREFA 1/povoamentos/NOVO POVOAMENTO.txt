@@ -6,6 +6,8 @@
 
 --tabela cobertura
 
+
+
 -- No dicionário de dados a coluna idRegiao estava do tipo char(2), enquanto na criação do banco ela estava como SERIAL, então optamos por seguir o SCRIPT criado pelo professor.
 
 INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Acre');
@@ -5666,15 +5668,11 @@ insert into cliente (idCliente, nome, endereco, bairro, idCidade, dataCadastro, 
 
 -- tabela tarifa
 
-insert into tarifa (idTarifa, descricao, valor) values (1, 'Prézão', 0);
-insert into tarifa (idTarifa, descricao, valor) values (2, 'Flex', 35.00);
-insert into tarifa (idTarifa, descricao, valor) values (3, 'Controle', 55.00);
-insert into tarifa (idTarifa, descricao, valor) values (4, 'Pós-pago Simples', 64.99);
-insert into tarifa (idTarifa, descricao, valor) values (5, 'Pós-pago Melhorado', 78.00);
-insert into tarifa (idTarifa, descricao, valor) values (6, 'Pós Premium', 85.00);
-insert into tarifa (idTarifa, descricao, valor) values (7, 'Pós Semi-Infinitus', 120.00);
-insert into tarifa (idTarifa, descricao, valor) values (8, 'Pós Infinitus', 219.98);
-
+insert into tarifa (idTarifa, descricao, valor) values (DEFAULT, 'Roaming básico', 2.50);
+insert into tarifa (idTarifa, descricao, valor) values (DEFAULT, 'Minuto adicional', 0.4);
+insert into tarifa (idTarifa, descricao, valor) values (DEFAULT, 'Minuto adicional outra operadora', 0.65);
+insert into tarifa (idTarifa, descricao, valor) values (DEFAULT, 'Multa por atraso pagamento', 7.40);
+insert into tarifa (idTarifa, descricao, valor) values (DEFAULT, 'Minuto adicional ilimitado', 0.00);
 
 -- tabela plano
 
@@ -5719,14 +5717,14 @@ insert into cliente_chip (idNumero, idCliente) values ('98985212345', 5);
 
 --tabela plano_tarifa
 
-insert into plano_tarifa (idPlano, idTarifa) values (1, 1);
-insert into plano_tarifa (idPlano, idTarifa) values (2, 2);
-insert into plano_tarifa (idPlano, idTarifa) values (3, 3);
-insert into plano_tarifa (idPlano, idTarifa) values (4, 4);
-insert into plano_tarifa (idPlano, idTarifa) values (5, 5);
-insert into plano_tarifa (idPlano, idTarifa) values (6, 6);
-insert into plano_tarifa (idPlano, idTarifa) values (7, 7);
-insert into plano_tarifa (idPlano, idTarifa) values (8, 8);
+--insert into plano_tarifa (idPlano, idTarifa) values (1, 1);
+--insert into plano_tarifa (idPlano, idTarifa) values (2, 2);
+--insert into plano_tarifa (idPlano, idTarifa) values (3, 3);
+--insert into plano_tarifa (idPlano, idTarifa) values (4, 4);
+--insert into plano_tarifa (idPlano, idTarifa) values (5, 5);
+--insert into plano_tarifa (idPlano, idTarifa) values (6, 6);
+--insert into plano_tarifa (idPlano, idTarifa) values (7, 7);
+--insert into plano_tarifa (idPlano, idTarifa) values (8, 8);
 
 
 -- TABELA: fatura
