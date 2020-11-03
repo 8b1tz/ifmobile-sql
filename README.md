@@ -1,17 +1,15 @@
-# Projeto IFmobile 08/11, Faltam ( 7 ) dias !
+# Projeto IFmobile 08/11, Faltam ( 5 ) dias !
 
-Faltam ( 6 ) Atividades
-
+<h2> Faltam ( 4 ) Atividades </h2>
 
  -  Lançamento das faturas para cada chip ativo, de acordo com o plano e consumo do mês e ano de referência. As faturas devem ser efetivadas de uma única vez; qualquer falha, cancela as parcelas já enviadas ao banco       - TODO
  -  Povoamento da tabela ligação conforme regras estabelecidas no item 7.2       - TODO <br><br><br>
-- Organização                                               - TODO
-- Interface                                                 - TODO
-- Servidor                                                  - TODO
-- Revisão                                                   - TODO
 
+- Servidor e Interface                                      - TODO <br>
+- Revisão e organização                                     - TODO
+<br><br><br>
 --------------------------------
- 
+ <h2> Concluídas </h2>
   - Visões                                                    - DONE
   -  Gerar numero telefonico: o numero gerado tem que ser um que ainda não esteja na base de dados        - DONE 
   -  Apresentar  e implementar uma situação coerente em que se encaixa a aplicação de um trigger       - DONE
