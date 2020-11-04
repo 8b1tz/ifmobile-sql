@@ -25,7 +25,7 @@ DECLARE
 BEGIN
 num = '00000000000';
 subnum =  SUBSTR (num, 7, 4); 
-idrandom = random_between(1,27);
+idrandom = random_between(1,7);
 uf =  ddd FROM estado WHERE idregiao = idrandom LIMIT 1;
 random = FLOOR((random()*2)+1);
 dupli = 0;
