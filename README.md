@@ -1,10 +1,8 @@
 # Projeto IFmobile 08/11, Faltam ( 5 ) dias !
 
-<h2> Faltam ( 4 ) Atividades </h2>
+<h2> Faltam ( 3 ) Atividades </h2>
 
  -  Lançamento das faturas para cada chip ativo, de acordo com o plano e consumo do mês e ano de referência. As faturas devem ser efetivadas de uma única vez; qualquer falha, cancela as parcelas já enviadas ao banco       - TODO
- -  Povoamento da tabela ligação conforme regras estabelecidas no item 7.2       - TODO <br><br>
-
 - Servidor e Interface                                      - TODO <br>
 - Revisão e organização                                     - TODO
 <br><br><br>
