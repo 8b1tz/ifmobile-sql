@@ -17,4 +17,4 @@
   - Clientes com cadastro cancelados não podem receber um novo chip (verificação automática)       - DONE<br>
   -  Clientes que cancelam seu cadastro devem liberar o chip de sua posse para futuros usuários (ação automática)       - DONE<br>
    -  Escolha de numeros: esta função deve verificar quais números já foram criados e ficaram inativos (desistência do cliente). Não é para adicionar um novo número no banco        - DONE<br>
-
+ -  Povoamento da tabela ligação conforme regras estabelecidas no item 7.2       - DONE <br><br>
