@@ -3,21 +3,25 @@ RETURNS TRIGGER AS $$
 DECLARE 
     isCancelado char(1); 
 BEGIN
-isCancelado = cancelado from cliente where idcliente = new.idcliente;  
+isCancelado = cancelado from cliente where idcliente = new.idcliente;
 
+-- Condição para que se o cliente estiver cancelado, NÃO poderá ser adicionado na tabela
 IF isCancelado = 'S'  THEN 
-    RAISE EXCEPTION '%', 'Cliente cancelado !' ;
+    RAISE EXCEPTION '%', 'Cliente cancelado !' ; -- se o cliente estiver cancelado ocorrerá uma execeção 
 END IF;
 
 RETURN NEW ;
 END;
 $$ LANGUAGE plpgsql;
 
+-- Criação do Trigger que executará a verificação do cliente antes da inserção no cliente_chip, em cada linha
 CREATE TRIGGER clientetatus 
 BEFORE INSERT  ON cliente_chip
-FOR EACH ROW  
+FOR EACH ROW
 EXECUTE PROCEDURE verif_clientestatus();
 
+
+-- Observar resultado :
 select * from cliente_chip
 select * from cliente
 
