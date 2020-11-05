@@ -5691,10 +5691,18 @@ insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('95
 insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('85985112346', 3, 3, 'S', 'N');
 insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('63985212345', 4, 4, 'S', 'N');
 insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('85985112345', 5, 5, 'S', 'N');
-insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('83985212346', 5, 6, 'S', 'S');
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('83985212346', 5, 6, 'S', 'N');
 insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('84985112345', 7, 4, 'S', 'N');
 insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('83985212345', 8, 8, 'S', 'N');
-insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('98985212345', 9, 7, 'S', 'S');
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('98985212345', 9, 7, 'S', 'N');
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('11983267985', 10, 1, 'S', 'N');
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('68991116509', 11, 2, 'S', 'N');
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('81983278729', 12, 3, 'S', 'N');
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('21995280231', 13, 4, 'S', 'N');
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('85947142339', 14, 5, 'S', 'N');
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('63982244349', 15, 6, 'S', 'N');
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values ('85993212342', 16, 8, 'S', 'N');
+
 
 -- TABELA: cliente_chip
 
@@ -5708,6 +5716,15 @@ insert into cliente_chip (idNumero, idCliente) values ('83985212346', 8);
 insert into cliente_chip (idNumero, idCliente) values ('84985112345', 7);
 insert into cliente_chip (idNumero, idCliente) values ('83985212345', 6);
 insert into cliente_chip (idNumero, idCliente) values ('98985212345', 5);
+
+insert into cliente_chip (idNumero, idCliente) values ('11983267985', 1);
+insert into cliente_chip (idNumero, idCliente) values ('68991116509', 3);
+insert into cliente_chip (idNumero, idCliente) values ('81983278729', 3);
+insert into cliente_chip (idNumero, idCliente) values ('21995280231', 2);
+
+insert into cliente_chip (idNumero, idCliente) values ('85947142339', 1);
+insert into cliente_chip (idNumero, idCliente) values ('63982244349', 3);
+insert into cliente_chip (idNumero, idCliente) values ('85993212342', 2);
 
 
 --tabela plano_tarifa
