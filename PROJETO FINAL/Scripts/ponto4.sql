@@ -20,6 +20,8 @@ BEFORE INSERT  ON ligacao -- trigger será ativado antes da inserção
 FOR EACH ROW  --para cara linha será executada a função verif_chistatus 
 EXECUTE PROCEDURE verif_chistatus();
 
+
+-- Para testes
 select * from ligacao
 
 insert into ligacao (data, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) 
