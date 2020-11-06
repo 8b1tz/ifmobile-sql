@@ -12,6 +12,6 @@ RETURN QUERY SELECT idnumero, ativo,disponivel
 END; $$
 LANGUAGE 'plpgsql';
 
-drop function  verInativNum()
+--drop function  verInativNum()
 
 SELECT * FROM verInativNum();
