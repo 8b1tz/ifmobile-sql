@@ -116,17 +116,21 @@ OPEN cursorFat NO SCROLL FOR SELECT chipe.lamen as idNum,
 	END LOOP;
 	EXCEPTION 
 	WHEN OTHERS THEN
-		raise notice 'ENTROU NO EXCEPTION !!!';
+		raise notice 'Já existem faturas nesse mês !!!';
 		ROLLBACK ;
 CLOSE cursorFat;
+COMMIT;
 END; $$
 LANGUAGE 'plpgsql';
 
+
 /*
 BEGIN;
-CALL  geraFatu(7,2022);
+CALL  geraFatu(9,2022);
 COMMIT;
 */
 --   SELECT * from fatura order by referencia desc;
+	 --CALL geraLig(8, 2022)
+	 --Select * from fatura ORDER BY DATA DESC
 --   DELETE FROM fatura WHERE EXTRACT(YEAR FROM referencia) = 2022
 
