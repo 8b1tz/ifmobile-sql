@@ -143,7 +143,11 @@ class List:
             print(row2)
         emissor = input("Insira o número que ligou: ")
         receptor = input("Insira o receptor: ")
-        cur.execute("insert into ligacao (data, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2001-07-27 14:11:00',%s, 'PB', %s, 'PB', '2:52:06');",(emissor, receptor))
+        try:
+            cur.execute("insert into ligacao (data, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2001-07-27 14:11:00',%s, 'PB', %s, 'PB', '2:52:06');",(emissor, receptor))
+        except:
+            print('Não é possível fazer/receber ligações com um número inativo!')
+            con.rollback()
         con.commit()
         cur.execute("select * from ligacao;")
         novaliga = cur.fetchall()
