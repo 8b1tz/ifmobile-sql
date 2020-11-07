@@ -43,9 +43,27 @@ class List:
 
     def povoaLig(self): 
         cur = con.cursor()
-        mes = int(input("Insira o mes: "))
-        ano = int(input("Insira o ano: "))
-        cur.execute("CALL geraLig(%s, %s);", (mes, ano))
+
+        try:
+            mes = int(input("Insira o mes: "))
+            ano = int(input("Insira o ano: "))
+        except ValueError:
+            con.rollback()
+            return print('Não é permitido caracteres que não sejam numeros!')
+
+        try:
+            cur.execute("CALL geraLig(%s, %s);", (mes, ano))
+        except pg.errors.InvalidDatetimeFormat as e:
+            con.rollback()
+            return print("Datas inválidas, operação abortada!\nError tipo: {erType}".format(erType = type(e)))
+        except pg.errors.DatetimeFieldOverflow as e2:
+            con.rollback()
+            return print("Houve um overflow da data(data fora do alcance), operação abortada!\nError tipo: {erType}".format(erType = type(e2)))
+        except pg.errors.UniqueViolation as e3:
+            con.rollback()
+            return print("Já existem ligações nessa data, operação abortada!\nError tipo: {erType}".format(erType = type(e3)))
+
+        con.commit()
         cur.execute("SELECT COUNT(*) FROM ligacao as li where EXTRACT(MONTH FROM li.data) = %s AND EXTRACT(YEAR FROM li.data) = %s", (mes,ano))
         result_novalig = cur.fetchall()
         print("ligação gerada: ")
@@ -134,10 +152,10 @@ class List:
         emissor = input("Insira o número que ligou: ")
         receptor = input("Insira o receptor: ")
         try:
-            cur.execute("insert into ligacao (data, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2001-07-27 14:11:00',%s, 'PB', %s, 'PB', '2:52:06');",(emissor, receptor))
-        except:
-            print('Não é possível fazer/receber ligações com um número inativo!')
+            cur.execute("insert into ligacao (data, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2001-07-27 14:11:00',%s, 'PB', %s, 'PB', '0:52:06');",(emissor, receptor))
+        except Exception:
             con.rollback()
+            return print('Não é possível fazer/receber ligações com um número inativo!')
         con.commit()
         cur.execute("select * from ligacao;")
         novaliga = cur.fetchall()
@@ -176,11 +194,12 @@ class List:
         resposta = input("Tem certeza que quer fazer isso? S/N: ")
         if resposta.upper() == 'S':
             cur.execute("UPDATE cliente  SET cancelado = 'S' where idCliente = "+cliente1+";")
+            con.commit()
             print("Agora números estão disponiveis! ")
         else:
             print('Operação cancelada!')
 
-        con.commit()
+        
 
     def negChCliIna(self):
         cur = con.cursor()
@@ -199,9 +218,10 @@ class List:
         numero = input("Digite o seu número: ")
         try:
             cur.execute("insert into cliente_chip (idNumero, idCliente) values ('"+numero+"', "+cliente+");")
+            con.commit()
         except:
             print('Não é possível atribuir chip a um cliente cancelado!')
-        con.commit()
+        
 
     def menu(self):
         print( """List
