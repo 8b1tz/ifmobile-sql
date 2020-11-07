@@ -20,18 +20,21 @@ class List:
         self.res = False
 
     def geraNum(self, opera, plan):  
-        cur = con.cursor()
-        cur.execute("SELECT * FROM chip;")
-        antigoresult = cur.fetchall()
-        cur.execute("INSERT INTO chip (idOperadora, idPlano, ativo, disponivel) VALUES ( %s, %s, 'S', 'S');",(opera, plan))
-        con.commit()
-        cur.execute("SELECT * FROM chip;")
-        result = cur.fetchall()
-        lista_final = [x for x in result if x not in antigoresult]
-        for x in lista_final:
-            print("Número gerado: ")
-            print( x[0])
-            
+        try:
+            cur = con.cursor()
+            cur.execute("SELECT * FROM chip;")
+            antigoresult = cur.fetchall()
+            cur.execute("INSERT INTO chip (idOperadora, idPlano, ativo, disponivel) VALUES ( %s, %s, 'S', 'S');",(opera, plan))
+            con.commit()
+            cur.execute("SELECT * FROM chip;")
+            result = cur.fetchall()
+            lista_final = [x for x in result if x not in antigoresult]
+            for x in lista_final:
+                print("Número gerado: ")
+                print( x[0])
+        except Exception as e:
+            con.rollback()
+            return print('Operação abortada!', type(e))
 
     def gera5NumDisp(self):
         cur = con.cursor() 
@@ -244,23 +247,48 @@ r = input(" Type your choice: ")
 
 while (r != '0'):
     if r == "1":
-        print("""Escolha A Operadora:""")
-        cur = con.cursor()
-        cur.execute("SELECT * FROM operadora;")
-        ope = cur.fetchall()
-        for x in ope:
-            print(x)
-        opera = int(input('\n'))
-        cur.execute("SELECT * FROM plano;")
-        ope = cur.fetchall()
-        for x in ope:
-            print (str(x[0])+' - '+str(x[1]))
-            print ('    Minutos p/ mesma operadora: '+str(x[2]))
-            print ('    Minutos p/ outra operadora: '+str(x[3]))
-            print ('    Valor: '+str(x[4]))
-        plan = int(input ('Escolha o plano: '))
-        lis.geraNum(opera, plan) 
-        
+        try:
+            print("""Escolha A Operadora: \nDigite o numero 0 para sair.""")
+
+            cur = con.cursor()
+            cur.execute("SELECT * FROM operadora;")
+            ope = cur.fetchall()
+
+            for x in ope:
+                print(x)
+
+            opera = int(input('\n'))
+            if opera == 0:
+                con.rollback()
+                raise Exception("Operação abortada")
+            elif opera > 10 or opera < 0:
+                con.rollback()
+                raise ReferenceError()
+
+            cur.execute("SELECT * FROM plano;")
+            ope = cur.fetchall()
+
+            for x in ope:
+                print (str(x[0])+' - '+str(x[1]))
+                print ('    Minutos p/ mesma operadora: '+str(x[2]))
+                print ('    Minutos p/ outra operadora: '+str(x[3]))
+                print ('    Valor: '+str(x[4]))
+
+            plan = int(input ('Escolha o plano: \nDigite o numero 0 para sair.\n'))
+            if plan == 0:
+                con.rollback()
+                raise Exception("Operação abortada")
+            elif plan > 8 or opera < 0:
+                con.rollback()
+                raise ReferenceError()
+
+            lis.geraNum(opera, plan)
+        except ValueError:
+            print('Opção inválida, por favor, digite somente números!')    
+        except ReferenceError:
+            print('Opção inválida!\n')
+        except Exception as r:
+                print('Operação abortada\n')
     elif r == "2":
         lis.gera5NumDisp() # QUASE OK
         
