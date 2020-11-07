@@ -176,6 +176,10 @@ class List:
             return print('Não é permitido usar letras na escolha!')
             
         result_clch = cur.fetchall()
+        if result_clch == []:
+            con.rollback()
+            return print ('Não existem numeros ativos para esse cliente! \nOu ele é um cliente novo ou está cancelado!')
+            
         print("Números do cliente: ")
         for row6 in result_clch:
             print(row6)
