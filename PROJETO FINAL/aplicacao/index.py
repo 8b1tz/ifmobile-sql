@@ -42,6 +42,7 @@ class List:
             print(x)
 
     def povoaLig(self): 
+        cur = con.cursor()
         mes = input("Insira o mes: ")
         ano = input("Insira o ano: ")
         cur.execute("select * from ligacao ORDER by data DESC;")
@@ -60,13 +61,43 @@ class List:
             print("duracao: ",row7[5])
 
     def viewUm(self):  
-        print('viewUm')
+        cur = con.cursor()
+        cur.execute("select * from rankPlan;")
+        result_view1 = cur.fetchall()
+        lista_view1 = [x for x in result_view1]
+        print("Rank de planos: ")
+        for row in lista_view1:
+            print("idplano: ",row[0])
+            print("descricao: ",row[1])
+            print("quantidade: ",row[2])
+            print("total: ",row[3])
+            print("-----------")
 
     def viewDois(self): 
-        print('viewDois')
+        cur = con.cursor()
+        cur.execute("select * from faturamento ;")
+        result_view2 = cur.fetchall()
+        lista_view2 = [x for x in result_view2]
+        print("Faturamento por mes/ano: ")
+        for row in lista_view2:
+            print("ano: {:.0f}".format(row[0]))
+            print("mes: {:.0f}".format(row[1]))
+            print("Numero de Clientes: ",row[2])
+            print("Faturamento: ",row[3])
+            print("-----------")
 
     def viewTres(self):
-        print('viewTres')
+        cur = con.cursor()
+        cur.execute("select * from fidelidade;")
+        result_view3 = cur.fetchall()
+        for row in result_view3:
+                print("idCliente: ", row[0])
+                print("nome: ", row[1])
+                print("uf: ", row[2])
+                print("idnumero: ", row[3])
+                print("idplano: ", row[4])
+                print("tempo fiel: ", row[5])
+                print("-----------")
 
     def geraFatura(self):
         print("Escreva em números, o mes: ")
