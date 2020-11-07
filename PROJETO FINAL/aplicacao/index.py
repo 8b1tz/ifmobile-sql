@@ -168,8 +168,13 @@ class List:
         print("Clientes não cancelados: ")
         for row5 in result_naocanc1:
             print(row5)
-        cliente1 = input("Qual cliente você deseja cancelar? ")
-        cur.execute("SELECT chip.idnumero FROM cliente join cliente_chip on cliente_chip.idcliente = cliente.idcliente join chip on cliente_chip.idnumero = chip.idnumero WHERE cliente.idcliente = "+cliente1+";")
+        cliente1 = input("Qual cliente você deseja cancelar? Escolha o numero: ")
+        try:
+            cur.execute("SELECT chip.idnumero FROM cliente join cliente_chip on cliente_chip.idcliente = cliente.idcliente join chip on cliente_chip.idnumero = chip.idnumero WHERE cliente.idcliente = "+cliente1+";")
+        except pg.errors.UndefinedColumn:
+            con.rollback()
+            return print('Não é permitido usar letras na escolha!')
+            
         result_clch = cur.fetchall()
         print("Números do cliente: ")
         for row6 in result_clch:
