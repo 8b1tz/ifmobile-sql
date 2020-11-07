@@ -9,21 +9,19 @@ con = psycopg2.connect(
 )
 cur = con.cursor()
 
-
-cur.execute ("SELECT idCliente from cliente where cancelado = 'N' LIMIT 5;")
-result_naocanc1 = cur.fetchall()
-print("Clientes não cancelados: ")
-for row5 in result_naocanc1:
-    print(row5)
-cliente1 = input("Qual cliente você deseja cancelar? ")
-cur.execute("SELECT chip.idnumero FROM cliente join cliente_chip on cliente_chip.idcliente = cliente.idcliente join chip on cliente_chip.idnumero = chip.idnumero WHERE cliente.idcliente = "+cliente1+";")
-result_clch = cur.fetchall()
-print("Números do cliente: ")
-for row6 in result_clch:
-    print(row6)
-resposta = print(input("Tem certeza que quer fazer isso? S/N: "))
-if resposta == 'S' or 's':
-    cur.execute("UPDATE cliente  SET cancelado = 'S' where idCliente = "+cliente1+";")
-    print("Agora números estão disponiveis! ")
-
-con.commit()
+mes = input("Insira o mes: ")
+ano = input("Insira o ano: ")
+cur.execute("select * from ligacao ORDER by data DESC;")
+result_antigaslig = cur.fetchall()
+cur.execute("CALL geraLig(%s, %s);", (mes, ano))
+cur.execute("select * from ligacao ORDER by data DESC;")
+result_novalig = cur.fetchall()
+lista_ligac = [x for x in result_novalig if x not in result_antigaslig]
+print("ligação gerada: ")
+for row7 in lista_ligac:
+    print("data: ",row7[0])
+    print("emissor: ",row7[1])
+    print("uf origem: ",row7[2])
+    print("receptor: ",row7[3])
+    print("uf destino: ",row7[4])
+    print("duracao: ",row7[5])
