@@ -23,7 +23,7 @@ class List:
         cur = con.cursor()
         cur.execute("SELECT * FROM chip;")
         antigoresult = cur.fetchall()
-        cur.execute("INSERT INTO chip (idOperadora, idPlano, ativo, disponivel) VALUES ( 1, 1, 'N', 'S');")
+        cur.execute("INSERT INTO chip (idOperadora, idPlano, ativo, disponivel) VALUES ( 1, 1, 'S', 'S');")
         con.commit()
         cur.execute("SELECT * FROM chip;")
         result = cur.fetchall()
