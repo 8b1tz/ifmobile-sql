@@ -174,8 +174,8 @@ class List:
         print("Números do cliente: ")
         for row6 in result_clch:
             print(row6)
-        resposta = print(input("Tem certeza que quer fazer isso? S/N: "))
-        if resposta == 'S' or 's':
+        resposta = input("Tem certeza que quer fazer isso? S/N: ")
+        if resposta.upper() == 'S':
             cur.execute("UPDATE cliente  SET cancelado = 'S' where idCliente = "+cliente1+";")
             print("Agora números estão disponiveis! ")
         else:
