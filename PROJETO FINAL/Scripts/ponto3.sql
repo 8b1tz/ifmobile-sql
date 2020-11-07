@@ -114,10 +114,7 @@ OPEN cursorFat NO SCROLL FOR SELECT chipe.lamen as idNum,
 		insert into  fatura (referencia, idNumero, valor_plano, tot_min_int, tot_min_ext, tx_min_exced, tx_roaming, total, pago) 
 		values (refe, rec.idNum, rec.valorPlan, tot_min_int, tot_min_ext, tx_min_exced, tx_roaming, total, pago);
 	END LOOP;
-	EXCEPTION 
-	WHEN OTHERS THEN
-		raise notice 'Já existem faturas nesse mês !!!';
-		ROLLBACK ;
+
 CLOSE cursorFat;
 COMMIT;
 END; $$
@@ -126,11 +123,13 @@ LANGUAGE 'plpgsql';
 
 /*
 BEGIN;
-CALL  geraFatu(9,2022);
+CALL  geraFatu(8,2025);
+CALL geraFatu(9,2026);
 COMMIT;
+
 */
 --   SELECT * from fatura order by referencia desc;
-	 --CALL geraLig(8, 2022)
+	 --CALL geraLig(9, 2026)
 	 --Select * from fatura ORDER BY DATA DESC
 --   DELETE FROM fatura WHERE EXTRACT(YEAR FROM referencia) = 2022
 
