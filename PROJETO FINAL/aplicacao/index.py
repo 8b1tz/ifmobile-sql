@@ -32,6 +32,8 @@ class List:
             for x in lista_final:
                 print("Número gerado: ")
                 print( x[0])
+            con.commit()
+
         except Exception as e:
             con.rollback()
             return print('Operação abortada!', type(e))
@@ -43,6 +45,7 @@ class List:
         print("Números disponiveis: ")
         for x in nums:
             print(x)
+        con.commit()
 
     def povoaLig(self): 
         cur = con.cursor()
@@ -72,7 +75,8 @@ class List:
         print("ligação gerada: ")
         for row7 in result_novalig:
             print("Quantidade de ligações realizadas: "+str(row7[0])+"\n")
-            
+        con.commit()
+    
     def viewUm(self):  
         cur = con.cursor()
         cur.execute("select * from rankPlan;")
@@ -85,6 +89,7 @@ class List:
             print("quantidade: ",row[2])
             print("total: ",row[3])
             print("-----------")
+        con.commit()
 
     def viewDois(self): 
         cur = con.cursor()
@@ -98,6 +103,7 @@ class List:
             print("Numero de Clientes: ",row[2])
             print("Faturamento: ",row[3])
             print("-----------")
+        con.commit()
 
     def viewTres(self):
         cur = con.cursor()
@@ -111,6 +117,7 @@ class List:
                 print("idplano: ", row[4])
                 print("tempo fiel: ", row[5])
                 print("-----------")
+        con.commit()
 
     def geraFatura(self):
         print("Escreva em números, o mes: ")
@@ -170,7 +177,7 @@ class List:
             print("receptor:: ",row[3])
             print("uf destino: ",row[4])
             print("duracao: ",row[5])
-
+        con.commit()
 
     def libChip(self): 
         cur = con.cursor()
@@ -200,6 +207,7 @@ class List:
             con.commit()
             print("Agora números estão disponiveis! ")
         else:
+            con.rollback()
             print('Operação cancelada!')
 
         
@@ -223,6 +231,7 @@ class List:
             cur.execute("insert into cliente_chip (idNumero, idCliente) values ('"+numero+"', "+cliente+");")
             con.commit()
         except:
+            con.rollback()
             print('Não é possível atribuir chip a um cliente cancelado!')
         
 
