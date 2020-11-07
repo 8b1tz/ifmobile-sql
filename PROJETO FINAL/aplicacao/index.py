@@ -1,16 +1,18 @@
 from tkinter import *
 import psycopg2 as pg
-
+usua = input('Faca seu login: \nUsuário: ')
+senha = input('Senha: ')
 try:
     con = pg.connect(
             host='localhost', 
             database= 'ifmobile', 
-            user='postgres', 
-            password='postgres', 
+            user=usua, 
+            password=senha, 
             port=5432)
 except pg.DatabaseError as dbe:
     con.close()
-    print('ERRO')
+    print('ERRO, NÃO FOI POSSIVEL CONECTAR AO BANCO\nVerifique se suas credenciais estão corretas, \nse o banco está criado ou em funcionamento.')
+
 
 class List:
     def __init__(self, head=None):  # Construtor
