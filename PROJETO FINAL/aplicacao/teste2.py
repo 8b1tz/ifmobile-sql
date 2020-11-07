@@ -1,178 +1,140 @@
+from tkinter import *
+import psycopg2 as pg
+usua = input('Faca seu login: \nUsuário: ')
+senha = input('Senha: ')
 try:
-    import tkinter as tk                # python 3
-    from tkinter import font as tkfont  # python 3
-except ImportError:
-    import Tkinter as tk     # python 2
-    import tkFont as tkfont  # python 2
+    con = pg.connect(
+            host='localhost', 
+            database= 'ifmobile', 
+            user=usua, 
+            password=senha, 
+            port=5432)
+except pg.DatabaseError as dbe:
+    con.close()
+    print('ERRO, NÃO FOI POSSIVEL CONECTAR AO BANCO\nVerifique se suas credenciais estão corretas, \nse o banco está criado ou em funcionamento.')
 
-c = "Voltar ao Menu"
-class SampleApp(tk.Tk):
+class List:
+    def __init__(self, head=None):  # Construtor
+        self._head = head
+        self.res = False
 
-    def __init__(self, *args, **kwargs):
-        tk.Tk.__init__(self, *args, **kwargs)
+    def geraNum(self, opera, plan):  
+        cur = con.cursor()
+        cur.execute("SELECT * FROM chip;")
+        antigoresult = cur.fetchall()
+        cur.execute("INSERT INTO chip (idOperadora, idPlano, ativo, disponivel) VALUES ( %s, %s, 'N', 'S');",(opera, plan))
+        con.commit()
+        cur.execute("SELECT * FROM chip;")
+        result = cur.fetchall()
+        lista_final = [x for x in result if x not in antigoresult]
+        for x in lista_final:
+            print("Número gerado: ")
+            print( x[0])
+            print (x[1])
+            print (x[2])
+            print (x[3])
 
-        self.title_font = tkfont.Font(family='Helvetica', size=18, weight="bold", slant="italic")
+    def gera5NumDisp(self):
+        cur = con.cursor() 
+        cur.execute("SELECT * FROM verInativNum();")
+        nums = cur.fetchall()
+        print("Números disponiveis: ")
+        for x in nums:
+            print(x)
 
+    def geraFatura(self, mes, ano):
+        cur = con.cursor()
+        cur.execute("SELECT * FROM fatura;")
+        antigafatura = cur.fetchall()
+        cur.execute("CALL geraFatu(%s, %s);", (mes, ano))
+        con.commit()
+        cur.execute("SELECT * FROM fatura;")
+        result_fatura = cur.fetchall()
+        lista_fatura = [x for x in result_fatura if x not in antigafatura]
+        for row in lista_fatura:
+            print("data referencial: ", row[0])
+            print("idnumero: ",row[1])
+            print("valor plano: ",row[2])
+            print("total minutos internos: ",row[3])
+            print("total minutos externos: ",row[4])
+            print("taxa minutos excedidos: ",row[5])
+            print("taxa roaming: ",row[6])
+            print("total: ",row[7])
+            print("pago: ",row[8] )
+
+    def povoaLig(self): 
+        print('povoaLig')
+
+    def viewUm(self):  
+        print('viewUm')
+
+    def viewDois(self): 
+        print('viewDois')
+
+    def viewTres(self):
+        print('viewTres')
+
+    def setFim(self):
+        self.res = True
+
+    def menu(self):
+        print( """List
+         0 - Fim
+         1 - Geração Número
+         2 - Geração 5 Números Disponiveis
+         3 - Povoamento de Ligacao  
+         4 - View 1: Ranking planos
+         5 - View 2: Faturamento por mes/ano
+         6 - View 3: Detalhamento dos clientes
+         7 - Gera Fatura
+        """)
+
+lis = List()
+lis.menu()
+r = input(" Type your choice: ")
+
+while (r != '0'):
+    if r == "1":
+        print("""Escolha A Operadora:""")
+        cur = con.cursor()
+        cur.execute("SELECT * FROM operadora;")
+        ope = cur.fetchall()
+        for x in ope:
+            print(x)
+        opera = int(input('\n'))
+        cur.execute("SELECT * FROM plano;")
+        ope = cur.fetchall()
+        for x in ope:
+            print (str(x[0])+' - '+str(x[1]))
+            print ('    Minutos p/ mesma operadora: '+str(x[2]))
+            print ('    Minutos p/ outra operadora: '+str(x[3]))
+            print ('    Valor: '+str(x[4]))
+        plan = int(input ('Escolha o plano: '))
+        lis.geraNum(opera, plan)
         
-        container = tk.Frame(self)
-        container.pack(side="top", fill="both", expand=True)
-        container.grid_rowconfigure(0, weight=1)
-        container.grid_columnconfigure(0, weight=1)
-
-        self.frames = {}
-        for F in (StartPage, PageOne, PageTwo, PageThree, PageFour, PageFive, PageSix, PageSeven, PageEight, PageNine):
-            page_name = F.__name__
-            frame = F(parent=container, controller=self)
-            self.frames[page_name] = frame
-
-            
-            frame.grid(row=0, column=0, sticky="nsew")
-
-        self.show_frame("StartPage")
-
-    def show_frame(self, page_name):
+    elif r == "2":
+        lis.gera5NumDisp()
         
-        frame = self.frames[page_name]
-        frame.tkraise()
+    elif r == "3":
+        lis.povoaLig()
+        
+    elif r == "4":
+        lis.viewUm()
+        
+    elif r == "5":
+        lis.viewDois()
 
-
-class StartPage(tk.Frame):
-
-    def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-        self.controller = controller
-        label = tk.Label(self, text="Escolha o que deseja.", font=controller.title_font)
-        label.pack(side="top", fill="x", pady=10)
-
-        button1 = tk.Button(self, text="Geração de Numeros",
-                            command=lambda: controller.show_frame("PageOne"))
-        button2 = tk.Button(self, text="5 Numeros Aleatórios Disponiveis",
-                            command=lambda: controller.show_frame("PageTwo"))
-        button3 = tk.Button(self, text="Rotina de Fatura",
-                            command=lambda: controller.show_frame("PageThree"))
-        button4 = tk.Button(self, text="Testes Requisito 4",
-                            command=lambda: controller.show_frame("PageFour"))
-        button5 = tk.Button(self, text="Testes Requisito 5",
-                            command=lambda: controller.show_frame("PageFive"))
-        button6 = tk.Button(self, text="Rotina de Ligações",
-                            command=lambda: controller.show_frame("PageSix"))
-        button7 = tk.Button(self, text="V1 - Ranking",
-                            command=lambda: controller.show_frame("PageSeven"))
-        button8 = tk.Button(self, text="V2 - Faturamento",
-                            command=lambda: controller.show_frame("PageEight"))
-        button9 = tk.Button(self, text="V3 - Detalhes do Cliente",
-                            command=lambda: controller.show_frame("PageNine"))
-        button1.pack() 
-        button2.pack()
-        button3.pack()
-        button4.pack()
-        button5.pack()
-        button6.pack()
-        button7.pack()
-        button8.pack()
-        button9.pack()
-
-
-class PageOne(tk.Frame):
-
-    def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-        self.controller = controller
-        label = tk.Label(self, text="Geração de Numeros", font=controller.title_font)
-        label.pack(side="top", fill="x", pady=10)
-        button = tk.Button(self, text=c,
-                        command=lambda: controller.show_frame("StartPage"))
-        button.pack()
-
-
-class PageTwo(tk.Frame):
-
-    def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-        self.controller = controller
-        label = tk.Label(self, text="5 Numeros Aleatórios Disponiveis", font=controller.title_font)
-        label.pack(side="top", fill="x", pady=10)
-        button = tk.Button(self, text=c,
-                        command=lambda: controller.show_frame("StartPage"))
-        button.pack()
-
-class PageThree(tk.Frame):
-
-    def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-        self.controller = controller
-        label = tk.Label(self, text="Rotina de Fatura", font=controller.title_font)
-        label.pack(side="top", fill="x", pady=10)
-        button = tk.Button(self, text=c,
-                        command=lambda: controller.show_frame("StartPage"))
-        button.pack()
-
-class PageFour(tk.Frame):
-
-    def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-        self.controller = controller
-        label = tk.Label(self, text="Testes Requisito 4", font=controller.title_font)
-        label.pack(side="top", fill="x", pady=10)
-        button = tk.Button(self, text=c,
-                           command=lambda: controller.show_frame("StartPage"))
-        button.pack()
-
-class PageFive(tk.Frame):
-
-    def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-        self.controller = controller
-        label = tk.Label(self, text="Testes Requisito 5", font=controller.title_font)
-        label.pack(side="top", fill="x", pady=10)
-        button = tk.Button(self, text=c,
-                           command=lambda: controller.show_frame("StartPage"))
-        button.pack()
-
-class PageSix(tk.Frame):
-
-    def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-        self.controller = controller
-        label = tk.Label(self, text="Rotina de Ligações", font=controller.title_font)
-        label.pack(side="top", fill="x", pady=10)
-        button = tk.Button(self, text=c,
-                           command=lambda: controller.show_frame("StartPage"))
-        button.pack()
-
-class PageSeven(tk.Frame):
-
-    def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-        self.controller = controller
-        label = tk.Label(self, text="V1 - Ranking", font=controller.title_font)
-        label.pack(side="top", fill="x", pady=10)
-        button = tk.Button(self, text=c,
-                           command=lambda: controller.show_frame("StartPage"))
-        button.pack()
-
-class PageEight(tk.Frame):
-
-    def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-        self.controller = controller
-        label = tk.Label(self, text="V2 - Faturamento", font=controller.title_font)
-        label.pack(side="top", fill="x", pady=10)
-        button = tk.Button(self, text=c,
-                           command=lambda: controller.show_frame("StartPage"))
-        button.pack()
-
-class PageNine(tk.Frame):
-
-    def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-        self.controller = controller
-        label = tk.Label(self, text="V3 - Detalhes do Cliente", font=controller.title_font)
-        label.pack(side="top", fill="x", pady=10)
-        button = tk.Button(self, text=c,
-                           command=lambda: controller.show_frame("StartPage"))
-        button.pack()
-
-if __name__ == "__main__":
-    app = SampleApp()
-    app.mainloop()
+    elif r == "6":
+        lis.viewTres()
+    elif r == "7":
+        print("Escreva em números, o mes: ")
+        mes = int(input())
+        print("Escreva em números, o ano: ")
+        ano = int(input())
+        lis.geraFatura(mes, ano)
+    else:
+        lis.menu()
+    lis.menu()
+    r = input(" Type your choice: ")
+print('Banco Fechado, Fim !')
+con.close()
