@@ -1,5 +1,7 @@
 from tkinter import *
 import psycopg2 as pg
+import random
+
 usua = input('Faca seu login: \nUsuário: ')
 senha = input('Senha: ')
 try:
@@ -146,31 +148,38 @@ class List:
 
     def negLigInat(self): 
         cur = con.cursor()
-
-        cur.execute("select * from ligacao")
-        antiga_liga = cur.fetchall()
+        
         cur.execute("SELECT idNumero FROM chip where ativo = 'N' LIMIT 5;") 
         result_inativos = cur.fetchall()
+
         print("Números inativos: ")
         for row3 in result_inativos:
-            print(row3)
+            print(row3[0])
+
         cur.execute("SELECT idNumero FROM chip where ativo = 'S'LIMIT 5;") 
         result_ativos = cur.fetchall()
+
         print("Números ativos: ")
         for row2 in result_ativos:
-            print(row2)
+            print(row2[0])
+        
+        
         emissor = input("Insira o número que ligou: ")
         receptor = input("Insira o receptor: ")
+        dia = random.randint(1,23)
+        minu = random.randint(1,23)
+
         try:
-            cur.execute("insert into ligacao (data, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2001-07-27 14:11:00',%s, 'PB', %s, 'PB', '0:52:06');",(emissor, receptor))
+            cur.execute("insert into ligacao (data, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2001-07-%s 21:%s:00',%s, 'PB', %s, 'PB', '0:52:06');",(str(dia).zfill(2), str(minu).zfill(2), emissor, receptor))
         except Exception:
             con.rollback()
-            return print('Não é possível fazer/receber ligações com um número inativo!')
+            return print('\nNão é possível fazer/receber ligações com um número inativo!')
+
         con.commit()
-        cur.execute("select * from ligacao;")
+        cur.execute("select * from ligacao where chip_emissor = %s and chip_receptor = %s and data = '2001-07-%s 21:%s:00';",(emissor, receptor, str(dia).zfill(2), str(minu).zfill(2)))
         novaliga = cur.fetchall()
-        lista_liga = [x for x in novaliga if x not in antiga_liga]
-        for row in lista_liga:
+
+        for row in novaliga:
             print("data: ", row[0])
             print("emissor: ",row[1])
             print("uf origem: ",row[2])
@@ -230,7 +239,7 @@ class List:
         try:
             cur.execute("insert into cliente_chip (idNumero, idCliente) values ('"+numero+"', "+cliente+");")
             con.commit()
-        except:
+        except Exception:
             con.rollback()
             print('Não é possível atribuir chip a um cliente cancelado!')
         
