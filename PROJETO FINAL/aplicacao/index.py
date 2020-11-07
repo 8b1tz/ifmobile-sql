@@ -12,9 +12,8 @@ try:
             password=senha, 
             port=5432)
 except pg.DatabaseError as dbe:
-    con.close()
-    print('ERRO, NÃO FOI POSSIVEL CONECTAR AO BANCO\nVerifique se suas credenciais estão corretas, \nse o banco está criado ou em funcionamento.')
-
+    print('ERRO, NÃO FOI POSSIVEL CONECTAR AO BANCO\nVerifique se suas credenciais estão corretas, \nse o banco está criado ou em funcionamento.\n', dbe)
+    exit()
 
 class List:
     def __init__(self, head=None):  # Construtor
@@ -148,35 +147,42 @@ class List:
 
     def negLigInat(self): 
         cur = con.cursor()
-        
+        temp = []
         cur.execute("SELECT idNumero FROM chip where ativo = 'N' LIMIT 5;") 
         result_inativos = cur.fetchall()
-
+        cont = 1
         print("Números inativos: ")
         for row3 in result_inativos:
-            print(row3[0])
+            print('{} - {}'.format(cont, row3[0]))
+            temp.append(row3[0])
+            cont+=1
+            
 
         cur.execute("SELECT idNumero FROM chip where ativo = 'S'LIMIT 5;") 
         result_ativos = cur.fetchall()
 
         print("Números ativos: ")
         for row2 in result_ativos:
-            print(row2[0])
-        
-        
-        emissor = input("Insira o número que ligou: ")
-        receptor = input("Insira o receptor: ")
+            print('{} - {}'.format(cont, row2[0]))
+            temp.append(row2[0])
+            cont+=1
+
+        emissor = int(input("Insira o número que ligou: "))
+        receptor = int(input("Insira o receptor: "))
         dia = random.randint(1,23)
         minu = random.randint(1,23)
+        dia = int(format(dia, '02'))
+        minu = int(format(minu, '02'))
+        
 
         try:
-            cur.execute("insert into ligacao (data, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2001-07-%s 21:%s:00',%s, 'PB', %s, 'PB', '0:52:06');",(str(dia).zfill(2), str(minu).zfill(2), emissor, receptor))
-        except Exception:
+            cur.execute("insert into ligacao (data, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2001-07-%s 21:%s:00',%s, 'PB', %s, 'PB', '0:52:06');",(dia, minu, temp[emissor-1], temp[receptor-1]))
+        except pg.errors.RaiseException as e:
             con.rollback()
-            return print('\nNão é possível fazer/receber ligações com um número inativo!')
+            return print('\nNão é possível fazer/receber ligações com um número inativo!\n', e)
 
         con.commit()
-        cur.execute("select * from ligacao where chip_emissor = %s and chip_receptor = %s and data = '2001-07-%s 21:%s:00';",(emissor, receptor, str(dia).zfill(2), str(minu).zfill(2)))
+        cur.execute("select * from ligacao where chip_emissor = %s and chip_receptor = %s and data = '2001-07-%s 21:%s:00';",(temp[emissor], temp[receptor], dia, minu))
         novaliga = cur.fetchall()
 
         for row in novaliga:
