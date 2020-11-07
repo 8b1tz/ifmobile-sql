@@ -159,7 +159,7 @@ class List:
 
     def libChip(self): 
         cur = con.cursor()
-        cur.execute ("SELECT idCliente from cliente where cancelado = 'N' LIMIT 5;")
+        cur.execute ("SELECT idCliente, nome from cliente where cancelado = 'N' LIMIT 5;")
         result_naocanc1 = cur.fetchall()
         print("Clientes não cancelados: ")
         for row5 in result_naocanc1:
@@ -174,6 +174,8 @@ class List:
         if resposta == 'S' or 's':
             cur.execute("UPDATE cliente  SET cancelado = 'S' where idCliente = "+cliente1+";")
             print("Agora números estão disponiveis! ")
+        else:
+            print('Operação cancelada!')
 
         con.commit()
 
@@ -192,7 +194,10 @@ class List:
         cliente = input("Digite o seu idCliente: ")
         self.gera5NumDisp()
         numero = input("Digite o seu número: ")
-        cur.execute("insert into cliente_chip (idNumero, idCliente) values ('"+numero+"', "+cliente+");")
+        try:
+            cur.execute("insert into cliente_chip (idNumero, idCliente) values ('"+numero+"', "+cliente+");")
+        except:
+            print('Não é possível atribuir chip a um cliente cancelado!')
         con.commit()
 
     def menu(self):
