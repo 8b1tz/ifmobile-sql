@@ -17,11 +17,11 @@ class List:
         self._head = head
         self.res = False
 
-    def geraNum(self):  
+    def geraNum(self, opera, plan):  
         cur = con.cursor()
         cur.execute("SELECT * FROM chip;")
         antigoresult = cur.fetchall()
-        cur.execute("INSERT INTO chip (idOperadora, idPlano, ativo, disponivel) VALUES ( 1, 1, 'N', 'S');")
+        cur.execute("INSERT INTO chip (idOperadora, idPlano, ativo, disponivel) VALUES ( %s, %s, 'S', 'S');",(opera, plan))
         con.commit()
         cur.execute("SELECT * FROM chip;")
         result = cur.fetchall()
@@ -214,7 +214,22 @@ r = input(" Type your choice: ")
 
 while (r != '0'):
     if r == "1":
-        lis.geraNum() # QUASE OK
+        print("""Escolha A Operadora:""")
+        cur = con.cursor()
+        cur.execute("SELECT * FROM operadora;")
+        ope = cur.fetchall()
+        for x in ope:
+            print(x)
+        opera = int(input('\n'))
+        cur.execute("SELECT * FROM plano;")
+        ope = cur.fetchall()
+        for x in ope:
+            print (str(x[0])+' - '+str(x[1]))
+            print ('    Minutos p/ mesma operadora: '+str(x[2]))
+            print ('    Minutos p/ outra operadora: '+str(x[3]))
+            print ('    Valor: '+str(x[4]))
+        plan = int(input ('Escolha o plano: '))
+        lis.geraNum(opera, plan) 
         
     elif r == "2":
         lis.gera5NumDisp() # QUASE OK
