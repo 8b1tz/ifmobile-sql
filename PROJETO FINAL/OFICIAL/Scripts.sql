@@ -288,7 +288,7 @@ EXECUTE PROCEDURE verif_clientestatus();
 
 -- REQUISITO 6 --
 
-REATE OR REPLACE FUNCTION verif_clienteLiberaNum()
+CREATE OR REPLACE FUNCTION verif_clienteLiberaNum()
 RETURNS TRIGGER AS $$
 DECLARE 
     isCancelado char(1); 
