@@ -1,3 +1,10 @@
+-- ALUNOS --
+
+--Ana Júlia Oliveira Lins - 20191370002
+--Gabriel Xavier Silva - 20191370025
+--Yohanna de Oliveira Cavalcanti - 20191370003
+
+
 -- REQUISITO 1 --
 -- Criando função para gerar numero aleatorio de forma prática
 CREATE OR REPLACE FUNCTION random_between(low INT ,high INT) 
