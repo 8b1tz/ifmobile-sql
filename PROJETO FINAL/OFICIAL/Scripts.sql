@@ -246,3 +246,155 @@ EXECUTE PROCEDURE verif_chistatus();
 
 
 -- REQUISITO 5 --
+
+CREATE OR REPLACE FUNCTION verif_clientestatus()
+RETURNS TRIGGER AS $$
+DECLARE 
+    isCancelado char(1); 
+BEGIN
+isCancelado = cancelado from cliente where idcliente = new.idcliente;
+
+-- Condição para que se o cliente estiver cancelado, NÃO poderá ser adicionado na tabela
+IF isCancelado = 'S'  THEN 
+    RAISE EXCEPTION '%', 'Cliente cancelado !' ; -- se o cliente estiver cancelado ocorrerá uma execeção 
+END IF;
+
+RETURN NEW ;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Criação do Trigger que executará a verificação do cliente antes da inserção no cliente_chip, em cada linha
+CREATE TRIGGER clientetatus 
+BEFORE INSERT  ON cliente_chip
+FOR EACH ROW
+EXECUTE PROCEDURE verif_clientestatus();
+
+
+
+-- REQUISITO 6 --
+
+REATE OR REPLACE FUNCTION verif_clienteLiberaNum()
+RETURNS TRIGGER AS $$
+DECLARE 
+    isCancelado char(1); 
+    Num char(11);
+    cursorVer refcursor;
+    rec RECORD;
+BEGIN
+isCancelado = new.cancelado;
+
+IF isCancelado = 'S'  THEN -- Verifica se o cliente está como cancelado
+OPEN cursorVer NO SCROLL FOR select chi.idnumero from chip chi -- Abre um cursor com os numeros que pertencia ao cliente
+               join cliente_chip clichi on chi.idnumero = clichi.idnumero 
+               join cliente cli on clichi.idcliente = cli.idcliente and cli.idcliente = old.idcliente;
+    LOOP
+        FETCH cursorVer INTO rec;
+        EXIT WHEN NOT FOUND;
+        /* Deixará o número disponível e desativado na tabela chip, 
+        e deletará o vínculo do antigo cliente na tabela cliente_chip*/
+        UPDATE chip SET disponivel = 'S' WHERE chip.idnumero = rec.idnumero;
+        DELETE FROM cliente_chip WHERE cliente_chip.idnumero = rec.idnumero;
+    END LOOP;
+CLOSE cursorVer;
+END IF;
+
+RETURN NEW ;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER clienteCancel
+BEFORE UPDATE  ON cliente --Logo após o cliente ser cancelado, ele disparará
+FOR EACH ROW
+EXECUTE PROCEDURE verif_clienteLiberaNum();
+
+
+
+-- REQUISITO 7 -- 
+
+CREATE OR REPLACE PROCEDURE geraLig(mes int, ano int)
+AS $$
+DECLARE
+varNum  int ;
+quantIn int ;
+quantEx int ;
+n int ;
+
+cursorChip refcursor;
+rec RECORD;
+
+cursorData date := ano || '-' || mes || '-01';
+horaLiga timestamp;
+
+chipRecVar char(11);
+ufDest char(2);
+ufOrig char(2);
+BEGIN
+OPEN cursorChip  NO SCROLL FOR SELECT cc.idNumero from cliente_chip cc 
+													join chip chi on chi.idnumero = cc.idnumero 
+													where chi.ativo = 'S' group by cc.idNumero;
+    LOOP -- Loop para cada numero
+        FETCH cursorChip  INTO rec;
+        EXIT WHEN NOT FOUND;
+        LOOP -- Loop para os dias do mes
+            horaLiga = cursorData + interval '10 second';
+            EXIT WHEN (EXTRACT(MONTH FROM cursorData)::int) != mes;
+			varNum  = round(random() * (9) +1); -- quantidade de ligações
+			quantIn = round(random() * varNum); -- quantidade de ligações internas ( mesma op)
+			quantEx = varNum - quantIn; -- quantidade de ligações exeternas ( op diferentes)
+			n = 0;
+			--raise notice 'varNum = % / quantIn = % / quantEx = %',varNum,quantIn,quantEx;
+			
+            LOOP  
+				EXIT WHEN n = varNum ;
+			    IF  quantIn > 0 THEN
+					chipRecVar = cc.idNumero from cliente_chip cc -- vai receber o número 
+					join chip chi on chi.idnumero = cc.idnumero   -- que recebeu a ligação
+								where cc.idNumero != rec.idnumero and chi.ativo = 'S' 
+								and SUBSTR(rec.idnumero, 4, 2) = SUBSTR(cc.idNumero, 4, 2)
+								LIMIT 1 OFFSET FLOOR(random() * ((SELECT COUNT(*) FROM cliente_chip )-1));	
+					IF chipRecVar IS NULL THEN 
+						n = n + quantIn;
+						quantIn = 0 ;  
+					ELSE
+						ufDest = uf from estado where ddd = SUBSTR(chipRecVar, 0, 3)::INTEGER; 
+						ufOrig = uf from estado where ddd = SUBSTR(rec.idnumero, 0, 3)::INTEGER;	 
+						insert into ligacao (data, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) 
+						 values (horaLiga, rec.idnumero, ufOrig, chipRecVar, ufDest, ('0:' || LPAD(round(random() * (19)+1)::text, 2, '0') || ':00')::time);
+						n = n + 1;
+						quantIn = quantIn - 1;
+						horaLiga = horaLiga + interval '1 hour';	
+					END IF;
+				END IF;
+				IF quantEx > 0 THEN
+					chipRecVar = cc.idNumero from cliente_chip cc  --vai pegar o número que recebeu a ligação
+								join chip chi on chi.idnumero = cc.idnumero 
+								where cc.idNumero != rec.idnumero and chi.ativo = 'S' 
+								and SUBSTR(rec.idnumero, 4, 2) != SUBSTR(cc.idNumero, 4, 2)
+								LIMIT 1 OFFSET FLOOR(random() * ((SELECT COUNT(*) FROM cliente_chip )-1));
+					IF chipRecVar IS NULL THEN 
+						n = n + quantEx; 
+						quantEx = 0 ; 
+					ELSE
+						ufDest = uf from estado where ddd = SUBSTR(chipRecVar, 0, 3)::INTEGER;
+						ufOrig = uf from estado where ddd = SUBSTR(rec.idnumero, 0, 3)::INTEGER;	
+						insert into ligacao (data, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) 
+						values (horaLiga, rec.idnumero, ufOrig, chipRecVar, ufDest, ('0:' || LPAD(round(random() * (19)+1)::text, 2, '0') || ':00')::time);
+						quantEx = quantEx - 1;
+						n = n + 1;
+						horaLiga = horaLiga + interval '1 hour';
+    				END IF;
+    		    END IF;
+            END LOOP;
+            cursorData = cursorData + interval '1 day';
+            n = 0;
+        END LOOP;
+        n = 0;
+        cursorData = ano || '-' || mes || '-01';
+        horaLiga = cursorData + interval '1 second';
+    END LOOP;
+CLOSE cursorChip;
+END; $$
+LANGUAGE 'plpgsql';
+
+
+-- VIEW 1
