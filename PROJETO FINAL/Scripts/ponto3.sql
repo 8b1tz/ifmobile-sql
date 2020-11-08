@@ -116,7 +116,6 @@ OPEN cursorFat NO SCROLL FOR SELECT chipe.lamen as idNum,
 	END LOOP;
 
 CLOSE cursorFat;
-COMMIT;
 END; $$
 LANGUAGE 'plpgsql';
 
