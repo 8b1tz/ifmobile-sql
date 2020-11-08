@@ -12,7 +12,7 @@ try:
             password=senha, 
             port=5432)
 except pg.DatabaseError as dbe:
-    print('ERRO, NÃO FOI POSSIVEL CONECTAR AO BANCO\nVerifique se suas credenciais estão corretas, \nse o banco está criado ou em funcionamento.\n', dbe)
+    print('ERRO, NÃO FOI POSSIVEL CONECTAR AO BANCO\nVerifique se suas credenciais estão corretas, \nse o banco está criado ou em funcionamento.\nTipo: ', dbe)
     exit()
 
 class List:
