@@ -45,7 +45,7 @@ class List:
         nums = cur.fetchall()
         print("Números disponiveis: ")
         for x in nums:
-            print(x)
+            print('Num: ', x[0], ' Disp: ',x[2] ,'Ati: ' ,x[1] )
         con.commit()
 
     def povoaLig(self): 
