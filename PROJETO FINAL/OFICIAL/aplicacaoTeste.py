@@ -2,14 +2,14 @@ from tkinter import *
 import psycopg2 as pg
 import random
 
-usua = input('Faca seu login: \nUsuário: ')
-senha = input('Senha: ')
+#usua = input('Faca seu login: \nUsuário: ')
+#senha = input('Senha: ')
 try:
     con = pg.connect(
             host='localhost', 
             database= 'ifmobile', 
-            user=usua, 
-            password=senha, 
+            user="postgres",
+            password="postgres",
             port=5432)
 except pg.DatabaseError as dbe:
     print('ERRO, NÃO FOI POSSIVEL CONECTAR AO BANCO\nVerifique se suas credenciais estão corretas, \nse o banco está criado ou em funcionamento.\nTipo: ', dbe)
@@ -107,18 +107,18 @@ class List:
         con.commit()
 
     def viewTres(self):
-        cur = con.cursor()
-        cur.execute("select * from fidelidade;")
-        result_view3 = cur.fetchall()
-        for row in result_view3:
-                print("idCliente: ", row[0])
-                print("nome: ", row[1])
-                print("uf: ", row[2])
-                print("idnumero: ", row[3])
-                print("idplano: ", row[4])
-                print("tempo fiel: ", row[5])
-                print("-----------")
-        con.commit()
+            cur = con.cursor()
+            cur.execute("select * from fidelidade;")
+            result_view3 = cur.fetchall()
+            for row in result_view3:
+                    print("idCliente:   ", row[0])
+                    print("nome:        ", row[1])
+                    print("uf:          ", row[2])
+                    print("idnumero:    ", row[3])
+                    print("idplano:     ", row[4])
+                    print("tempo fiel:  ", row[5])
+                    print("-----------")
+            con.commit()
 
     def geraFatura(self):
         try:
@@ -234,26 +234,26 @@ class List:
 
     def negChCliIna(self):
         cur = con.cursor()
-        cur.execute ("SELECT idCliente from cliente where cancelado = 'N' LIMIT 5;")
+        cur.execute ("SELECT idCliente, nome from cliente where cancelado = 'N' LIMIT 5;")
         result_naocanc = cur.fetchall()
         print("Clientes não cancelados: ")
         for row4 in result_naocanc:
-            print(row4)
-        cur.execute ("SELECT idCliente from cliente where cancelado = 'S' LIMIT 5;")
+            print('id: {} - nome: {}'.format(row4[0],row4[1]))
+        cur.execute ("SELECT idCliente, nome from cliente where cancelado = 'S' LIMIT 5;")
         result_canc = cur.fetchall()
         print("Clientes Cancelados:")
         for row5 in result_canc:
-            print(row5)
+            print('id: {} - nome: {}'.format(row5[0],row5[1]))
         cliente = input("Digite o seu idCliente: ")
         self.gera5NumDisp()
         numero = input("Digite o seu número: ")
         try:
             cur.execute("insert into cliente_chip (idNumero, idCliente) values ('"+numero+"', "+cliente+");")
             con.commit()
+            print('Foi adicionado novo chip para o cliente !')
         except Exception:
             con.rollback()
-            print('Não é possível atribuir chip a um cliente cancelado!')
-        
+            print('Não é possível atribuir chip !')
 
     def menu(self):
         print( """List
