@@ -4,19 +4,29 @@
 --Gabriel Xavier Silva - 20191370025
 --Yohanna de Oliveira Cavalcanti - 20191370003
 
+
+/*POR SEGURANÇA E PARA EVITAR QUE O SERIAL DÊ CONFLITO 
+COM O BANCO DE DADOS DAS EQUIPES ANTERIOR, POR OBSEQUIO,
+REINICIE O SERIAL DAS TABELAS COM O CÓDIGO ABAIXO*/
+ALTER SEQUENCE cobertura_idRegiao_seq RESTART WITH 1;
+ALTER SEQUENCE operadora_idoperadora_seq RESTART WITH 1;
+ALTER SEQUENCE cidade_idcidade_seq RESTART WITH 1;
+ALTER SEQUENCE tarifa_idtarifa_seq RESTART WITH 1;
+ALTER SEQUENCE cidade_idcidade_seq RESTART WITH 1;
+-- SELECT * FROM cobertura
+-- tabela estado
+
+
 --tabela cobertura
-
-
-
 -- No dicionário de dados a coluna idRegiao estava do tipo char(2), enquanto na criação do banco ela estava como SERIAL, então optamos por seguir o SCRIPT criado pelo professor.
 
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Regional Nordeste area 1'); -- 1
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Regional Nordeste area 2'); -- 2
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Regional Norte');           -- 3
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Regiao Sudeste area 1');    -- 4
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Regiao Sudeste area 2');    -- 5
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Regiao Sul');               -- 6
-INSERT INTO cobertura (idRegiao, descricao) VALUES (DEFAULT, 'Regiao Centro-Oeste'); 
+INSERT INTO cobertura (idRegiao, descricao) VALUES (1, 'Regional Nordeste area 1'); -- 1
+INSERT INTO cobertura (idRegiao, descricao) VALUES (2, 'Regional Nordeste area 2'); -- 2
+INSERT INTO cobertura (idRegiao, descricao) VALUES (3, 'Regional Norte');           -- 3
+INSERT INTO cobertura (idRegiao, descricao) VALUES (4, 'Regiao Sudeste area 1');    -- 4
+INSERT INTO cobertura (idRegiao, descricao) VALUES (5, 'Regiao Sudeste area 2');    -- 5
+INSERT INTO cobertura (idRegiao, descricao) VALUES (6, 'Regiao Sul');               -- 6
+INSERT INTO cobertura (idRegiao, descricao) VALUES (7, 'Regiao Centro-Oeste');
 
 
 --tabela operadora
