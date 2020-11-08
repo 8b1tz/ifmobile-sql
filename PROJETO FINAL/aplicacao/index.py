@@ -170,8 +170,8 @@ class List:
             temp.append(row2[0])
             cont+=1
 
-        emissor = int(input("Insira o número que ligou: "))
-        receptor = int(input("Insira o receptor: "))
+        emissor = int(input("Escolha o índice ao lado do número que irá ligar: "))
+        receptor = int(input("Escolha o índice ao lado do número que irá receber a ligação: "))
         dia = random.randint(1,23)
         minu = random.randint(1,23)
         dia = int(format(dia, '02'))
