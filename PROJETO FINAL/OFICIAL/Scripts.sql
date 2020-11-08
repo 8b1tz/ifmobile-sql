@@ -79,6 +79,14 @@ RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
 
+-- Cria a trigger para inserir o idnumero na criação antes do insert no chip
+CREATE TRIGGER insereNum
+BEFORE INSERT  ON chip
+FOR EACH ROW
+EXECUTE PROCEDURE insere_Num();
+
+
+
 
 -- REQUISITO 2 --
 
