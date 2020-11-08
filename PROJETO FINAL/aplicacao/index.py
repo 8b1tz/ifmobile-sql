@@ -121,19 +121,22 @@ class List:
         con.commit()
 
     def geraFatura(self):
-        print("Escreva em números, o mes: ")
-        mes = int(input())
-        print("Escreva em números, o ano: ")
-        ano = int(input())
+        try:
+            mes = int(input("Insira o mes: "))
+            ano = int(input("Insira o ano: "))
+        except ValueError:
+            con.rollback()
+            return print('Não é permitido caracteres que não sejam numeros!')
         cur = con.cursor()
-        cur.execute("SELECT * FROM fatura;")
-        antigafatura = cur.fetchall()
-        cur.execute("CALL geraFatu(%s, %s);", (mes, ano))
-        con.commit()
-        cur.execute("SELECT * FROM fatura;")
+        try:
+            cur.execute("CALL geraFatu(%s, %s);", (mes, ano))
+            con.commit()
+        except pg.errors.UniqueViolation as e:
+            con.rollback()
+            return print("Já existe fatura nessa data, operação abortada!\nTipo :",type(e))
+        cur.execute("SELECT * FROM fatura as fa WHERE EXTRACT(MONTH FROM fa.referencia) = %s AND EXTRACT(YEAR FROM fa.referencia) = %s;",(mes,ano))
         result_fatura = cur.fetchall()
-        lista_fatura = [x for x in result_fatura if x not in antigafatura]
-        for row in lista_fatura:
+        for row in result_fatura:
             print("data referencial: ", row[0])
             print("idnumero: ",row[1])
             print("valor plano: ",row[2])
@@ -270,7 +273,7 @@ lis.menu()
 r = input(" Type your choice: ")
 
 while (r != '0'):
-    if r == "1":
+    if r == "1": #OK
         try:
             print("""Escolha A Operadora: \nDigite o numero 0 para sair.""")
 
@@ -314,9 +317,9 @@ while (r != '0'):
         except Exception as r:
                 print('Operação abortada\n')
     elif r == "2":
-        lis.gera5NumDisp() # QUASE OK
+        lis.gera5NumDisp() # OK
         
-    elif r == "3":
+    elif r == "3": #OK
         lis.povoaLig() 
         
     elif r == "4":
