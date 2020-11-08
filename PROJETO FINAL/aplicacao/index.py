@@ -94,7 +94,7 @@ class List:
 
     def viewDois(self): 
         cur = con.cursor()
-        cur.execute("select * from faturamento ;")
+        cur.execute("select * from faturamento order by ano, mes;")
         result_view2 = cur.fetchall()
         lista_view2 = [x for x in result_view2]
         print("Faturamento por mes/ano: ")
@@ -192,7 +192,7 @@ class List:
                 print("uf destino: ",row[4])
                 print("duracao: ",row[5])
             con.commit()
-            
+
         except pg.errors.RaiseException as e:
             con.rollback()
             return print('\nNão é possível fazer/receber ligações com um número inativo!\n', e)
