@@ -181,22 +181,22 @@ class List:
         try:
             cur.execute("insert into ligacao (data, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2001-07-%s 21:%s:00',%s, 'PB', %s, 'PB', '0:52:06');",(dia, minu, temp[emissor-1], temp[receptor-1]))
             con.commit()
-            cur.execute("select * from ligacao where chip_emissor = %s and chip_receptor = %s and data = '2001-07-%s 21:%s:00';",(temp[emissor-1], temp[receptor-1], dia, minu))
-            novaliga = cur.fetchall()
-
-            for row in novaliga:
-                print("data: ", row[0])
-                print("emissor: ",row[1])
-                print("uf origem: ",row[2])
-                print("receptor:: ",row[3])
-                print("uf destino: ",row[4])
-                print("duracao: ",row[5])
-            con.commit()
-
+            print('Ligacao adicionada !!\n',)
         except pg.errors.RaiseException as e:
             con.rollback()
             return print('\nNão é possível fazer/receber ligações com um número inativo!\n', e)
 
+        cur.execute("select * from ligacao where chip_emissor = %s and chip_receptor = %s and data = '2001-07-%s 21:%s:00';",(temp[emissor-1], temp[receptor-1], dia, minu))
+        novaliga = cur.fetchall()
+
+        for row in novaliga:
+            print("data: ", row[0])
+            print("emissor: ",row[1])
+            print("uf origem: ",row[2])
+            print("receptor:: ",row[3])
+            print("uf destino: ",row[4])
+            print("duracao: ",row[5])
+        con.commit()
         
 
     def libChip(self): 
