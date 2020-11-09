@@ -274,6 +274,7 @@ isCancelado = cancelado from cliente where idcliente = new.idcliente;
 IF isCancelado = 'S'  THEN 
     RAISE EXCEPTION '%', 'Cliente cancelado !' ; -- se o cliente estiver cancelado ocorrerá uma execeção 
 END IF;
+UPDATE chip SET disponivel = 'N' WHERE idnumero = new.idnumero
 
 RETURN NEW ;
 END;

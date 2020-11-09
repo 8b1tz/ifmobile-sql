@@ -251,7 +251,6 @@ class List:
         numero = input("Digite o seu número: ")
         try:
             cur.execute("insert into cliente_chip (idNumero, idCliente) values ('"+numero+"', "+cliente+");")
-            cur.execute("update chip set disponivel = 'N' where idnumero ='"+numero+"'")
             con.commit()
             print('Foi adicionado novo chip para o cliente !')
         except Exception as e:
