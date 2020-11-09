@@ -320,9 +320,9 @@ while (r != '0'):
         except Exception as r:
                 print('Operação abortada\n')
     elif r == "2":
-        lis.gera5NumDisp() # OK
+        lis.gera5NumDisp() 
         
-    elif r == "3": #OK
+    elif r == "3": 
         lis.povoaLig() 
         
     elif r == "4":
@@ -334,16 +334,16 @@ while (r != '0'):
     elif r == "6":
         lis.viewTres()
 
-    elif r == "7": # QUASE OK
+    elif r == "7": 
         lis.negLigInat()
 
-    elif r == "8": # QUASE OK
+    elif r == "8": 
         lis.libChip()  
 
-    elif r == "9": # QUASE OK
+    elif r == "9": 
         lis.negChCliIna()
 
-    elif r == "10": # QUASE OK
+    elif r == "10": 
         lis.geraFatura()
 
     else:
