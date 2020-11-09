@@ -69,7 +69,7 @@ class List:
         except pg.errors.UniqueViolation as e3:
             con.rollback()
             return print("Já existem ligações nessa data, operação abortada!\nError tipo: {erType}".format(erType = type(e3)))
-        except as e:
+        except Exception as e:
             con.rollback()
             return print(e)
         con.commit()
