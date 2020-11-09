@@ -69,7 +69,9 @@ class List:
         except pg.errors.UniqueViolation as e3:
             con.rollback()
             return print("Já existem ligações nessa data, operação abortada!\nError tipo: {erType}".format(erType = type(e3)))
-
+        except:
+            con.rollback()
+            return print(e)
         con.commit()
         cur.execute("SELECT COUNT(*) FROM ligacao as li where EXTRACT(MONTH FROM li.data) = %s AND EXTRACT(YEAR FROM li.data) = %s", (mes,ano))
         result_novalig = cur.fetchall()
@@ -249,11 +251,12 @@ class List:
         numero = input("Digite o seu número: ")
         try:
             cur.execute("insert into cliente_chip (idNumero, idCliente) values ('"+numero+"', "+cliente+");")
+            cur.execute("update chip set disponivel = 'N' where idnumero ='"+numero+"'")
             con.commit()
             print('Foi adicionado novo chip para o cliente !')
-        except Exception:
+        except Exception as e:
             con.rollback()
-            print('Não é possível atribuir chip !')
+            print('Não é possível atribuir chip !', type(e))
 
     def menu(self):
         print( """List
