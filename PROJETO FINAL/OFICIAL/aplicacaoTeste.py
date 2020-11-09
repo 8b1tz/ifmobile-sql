@@ -1,4 +1,3 @@
-from tkinter import *
 import psycopg2 as pg
 import random
 
