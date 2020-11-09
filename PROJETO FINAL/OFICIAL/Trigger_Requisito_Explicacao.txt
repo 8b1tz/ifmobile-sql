@@ -1,13 +1,3 @@
-Alunos:
-
-Ana Júlia Oliveira Lins - 20191370002
-Gabriel Xavier Silva - 20191370025
-Yohanna de Oliveira Cavalcanti - 20191370003
-
-O que cada um fez?
-
-Se juntamos em um grupo no discord para dialogar as questões, terminou todos fazendo juntos, pois todos enviavam as suas resoluções e erros e um ajudava o outro, foi literalmente um trabalho em grupo.
-
 Resposta para o ponto 8: 
 Um trigger à sua escolha, coerente com o escopo do projeto (explicar o que ele faz):
 
