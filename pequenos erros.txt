@@ -1,0 +1,37 @@
+Aqui estão PEQUENOS erros que não irão fazer retornar o resultado
+errado, mas é bom a gente saber para responder possiveis perguntas !!
+
+
+0BS 1 -> NÃO é pra falar sobre os erros. É só para dar uma olhada
+e caso eles comentem a gente saiba falar que realmente é um erro,
+em vez de tentar explicar algo errado.
+
+OBS 2 -> Deem uma olhada tbm, posso ter achado erro onde nao tem ou
+nao ter achado mais erros...
+
+ 
+Requisito 1:
+
+- Na linha 60, em subnum =  SUBSTR (num, 7); deveria ser 
+subnum =  SUBSTR (num, 2); para pegar os ultimos 4 numeros
+
+- Isso não irá dar erro, pois irá retornar vazio e vazio != '0000',
+então sai do loop de boas.
+
+Requisito 2:
+
+- Nome da funçao verInativNum() deveria ser verDispAtivNum()
+
+Requisito 3:
+
+- Só a parte de transação/concorrência msm, mas ta safe.
+
+Requisito 6:
+
+- Um DELETE dentro do loop, acredito que deveria estar fora.
+
+
+
+
+
+
