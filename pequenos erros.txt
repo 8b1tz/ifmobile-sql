@@ -25,6 +25,10 @@ Requisito 2:
 Requisito 3:
 
 - Só a parte de transação/concorrência msm, mas ta safe.
+- 	IF auxRoam = rec.idregiao THEN
+			  Roam = Roam + 1;
+		 END IF;
+     Aqui deveria ser auxRoam != rec.idregiao....
 
 Requisito 6:
 
