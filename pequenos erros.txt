@@ -30,9 +30,6 @@ Requisito 3:
 		 END IF;
      Aqui deveria ser auxRoam != rec.idregiao....
 
-Requisito 6:
-
-- Um DELETE dentro do loop, acredito que deveria estar fora.
 
 
 
